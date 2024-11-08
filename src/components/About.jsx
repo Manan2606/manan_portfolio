@@ -1,6 +1,6 @@
 import React from "react";
 import "../About.css";
-import Image from "../Image.jpeg";
+import Image from "../Image.jpg";
 import DownloadButton from "./DownloadButton"; // Correct the import path
 
 const About = () => {
@@ -10,9 +10,9 @@ const About = () => {
         <div className="about-left">
           <h2 className="about-name">MANAN SHAH</h2>
           <p className="about-description">
-            A passionate Software Developer currently pursuing my Master's
-            degree at NJIT, following my Bachelor's in Computer Science from
-            Changa University.
+            Computer Science student with a comprehensive skill set in both
+            front-end and back-end development. Proficient in various
+            programming languages, including JavaScript, SQL, React, and PHP.
           </p>
           <DownloadButton /> {/* Add the DownloadButton component here */}
         </div>
