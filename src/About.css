@@ -1,0 +1,32 @@
+.about-section {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-left {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Align items vertically center */
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
