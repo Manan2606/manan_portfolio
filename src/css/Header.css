@@ -1,0 +1,78 @@
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.8rem 1.5rem;  /* Reduced padding for a smaller header */
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: padding 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.header.scrolled {
+  padding: 0.6rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 100%;
+  max-height: 50px; /* Smaller logo to fit reduced header */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1.3rem;  /* Larger font size for navigation links */
+  font-weight: 600;  /* Slightly bolder for emphasis */
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #ff6600;
+}
+
+/* Hover Effect with Gradient Underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6600, #ffcc00);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+}

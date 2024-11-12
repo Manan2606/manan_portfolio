@@ -1,32 +1,56 @@
 import React from "react";
 import ExperienceItem from "./ExperienceItem";
-import "../Experience.css"; // Import the new CSS file
+import "../css/Experience.css"; // Import the new CSS file
 
 const Experience = () => {
   const experiences = [
     {
       id: 1,
       title: "WEB DEVELOPER",
-      company: "H2 TECHNO WORLD",
+      company: "H2 Techno World",
       duration: "Jul 2023 – Sep 2023",
-      description:
-        "Designed and implemented a comprehensive tax invoice system with functionalities for generating detailed, itemized invoices, reprinting invoices for specific periods, integrating user authentication features like login and logout, and developing an automated email notification system to send invoices to submitted email IDs using JS and PHP.",
+      description: [
+        "Designed a tax invoice system with enhanced usability and MFA.",
+        "Automated email notifications, reducing manual work by 25%.",
+      ],
+      impact: "Enhanced usability and security.",
+      technologies: ["PHP", "JavaScript", "MySQL"],
     },
     {
       id: 2,
       title: "SOFTWARE DEVELOPER",
-      company: "CROWN SOFTWARE",
+      company: "Crown Software",
       duration: "Dec 2022 – May 2023",
-      description:
-        "Managed the SQL database and API handling for MDHostel using PHP, JS and Ajax supporting Flutter and Web Developers to ensure seamless cross-platform integration and functionality, while also designing and developing webpages for the MDHostel website with a blend of frontend and backend technologies to create a robust and user-friendly online presence.",
+      description: [
+        "Optimized SQL database performance, reducing query times by 40%.",
+        "Developed modular components, increasing user engagement by 30%.",
+      ],
+      impact: "Improved database efficiency and user engagement.",
+      technologies: ["PHP", "JavaScript", "AJAX", "SQL"],
     },
     {
       id: 3,
       title: "WEB DEVELOPER",
       company: "NAVPAD INFOTECH",
-      duration: "May 2022 – July 2022",
-      description:
-        "Contributed to the Master Patient Index, a Single Page Web Application built using Vue.js and Laravel framework. This application streamlined hospital operations by focusing on Patient and Staff Modules, leveraging MySQL for database management.",
+      duration: "May 2022 – Jul 2022",
+      description: [
+        "Contributed to the Master Patient Index, a SPA for hospitals.",
+        "Used Vue.js and Laravel for efficient database management.",
+      ],
+      impact: "Streamlined hospital operations.",
+      technologies: ["Vue.js", "Laravel", "MySQL"],
+    },
+    {
+      id: 4,
+      title: "FRONTEND DEVELOPER",
+      company: "Sannibh Technology",
+      duration: "May 2021 – Jul 2021",
+      description: [
+        "Developed a responsive consulting website.",
+        "Built and integrated various service pages, enhancing navigation and accessibility.",
+      ],
+      impact: "Improved user engagement and accessibility.",
+      technologies: ["HTML", "CSS", "JavaScript"],
     },
   ];
 

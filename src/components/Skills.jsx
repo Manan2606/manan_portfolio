@@ -8,7 +8,6 @@ import {
   FaNodeJs,
   FaVuejs,
   FaPython,
-  FaDatabase,
   FaLaravel,
   FaPhp,
   FaAndroid,
@@ -16,22 +15,28 @@ import {
   FaAws,
   FaWordpress,
   FaFigma,
+  FaTools,
 } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
-import "../skills.css";
+import "../css/skills.css";
 
 const Skills = () => {
   const skills = [
     {
-      category: "Full Stack Web Development",
+      category: "Frontend Development",
       skills: [
         { name: "HTML5", icon: <FaHtml5 />, color: "#e34f26" },
         { name: "CSS3", icon: <FaCss3Alt />, color: "#1572b6" },
         { name: "Bootstrap", icon: <FaBootstrap />, color: "#563d7c" },
         { name: "JavaScript", icon: <FaJs />, color: "#f7df1e" },
         { name: "React.js", icon: <FaReact />, color: "#61dafb" },
-        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
         { name: "Vue.js", icon: <FaVuejs />, color: "#4fc08d" },
+      ],
+    },
+    {
+      category: "Backend and Database Management",
+      skills: [
+        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
         { name: "Laravel", icon: <FaLaravel />, color: "#FF2D20" },
         { name: "PHP", icon: <FaPhp />, color: "#4F5B93" },
         { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
@@ -40,20 +45,19 @@ const Skills = () => {
       ],
     },
     {
-      category: "Design and Problem Solving",
+      category: "Design and Collaboration",
       skills: [
         { name: "Figma", icon: <FaFigma />, color: "#F24E1E" },
-        { name: "Problem Solving", icon: <FaDatabase />, color: "#FF6F00" },
-        { name: "Creativity", icon: <FaReact />, color: "#61dafb" }, // Use a placeholder icon
-        { name: "Communication", icon: <FaJs />, color: "#f7df1e" }, // Use a placeholder icon
+        { name: "Problem Solving", icon: <FaTools />, color: "#FF6F00" },
+        { name: "Creativity", icon: <FaTools />, color: "#61dafb" },
+        { name: "Communication", icon: <FaTools />, color: "#f7df1e" },
       ],
     },
     {
-      category: "SD and Programming",
+      category: "Programming Languages and Tools",
       skills: [
         { name: "Python", icon: <FaPython />, color: "#306998" },
-        { name: "C", icon: <FaDatabase />, color: "#FF6F00" }, // Use a placeholder icon
-        { name: "C++", icon: <FaDatabase />, color: "#FF6F00" }, // Use a placeholder icon
+        { name: "C++", icon: <FaTools />, color: "#FF6F00" },
         { name: "Android", icon: <FaAndroid />, color: "#3DDC84" },
         { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
         { name: "AWS", icon: <FaAws />, color: "#FF9900" },
@@ -62,17 +66,19 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills">
-      <h2>Skills</h2>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
       {skills.map((category, index) => (
         <div key={index} className="skills-category">
           <h3 className="skills-category-title">{category.category}</h3>
-          <div className="skills-list">
+          <div className="skills-list" role="list">
             {category.skills.map((skill, index) => (
               <div
                 key={index}
                 className="skill-item"
                 style={{ backgroundColor: skill.color }}
+                aria-label={skill.name}
+                title={skill.name}
               >
                 <span className="skill-icon">{skill.icon}</span>
                 <span className="skill-name">{skill.name}</span>

@@ -10,8 +10,8 @@ Welcome to my portfolio repository! I am a Master’s student in Computer Scienc
 
 - **Location:** Jersey City, New Jersey
 - **Contact:** mananshah2602@gmail.com
-- **LinkedIn:** [Your LinkedIn Profile URL]
-- **GitHub:** [Your GitHub Profile URL]
+- **LinkedIn:** https://www.linkedin.com/in/manan-shah-b5376420b/
+- **GitHub:** https://github.com/Manan2606/
 
 ### Education
 

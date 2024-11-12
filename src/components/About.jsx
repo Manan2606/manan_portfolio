@@ -1,5 +1,5 @@
 import React from "react";
-import "../About.css";
+import "../css/About.css";
 import Image from "../Image.jpg";
 import DownloadButton from "./DownloadButton"; // Correct the import path
 

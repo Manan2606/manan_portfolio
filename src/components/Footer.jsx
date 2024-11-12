@@ -7,24 +7,31 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
-import "../Footer.css";
+import "../css/Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
+        {/* Email Section */}
         <div className="footer-section">
           <FaEnvelope className="footer-icon" />
-          <span>Email: mananshah2602@gmail.com</span>
+          <span>mananshah2602@gmail.com</span>
         </div>
+
+        {/* Phone Section */}
         <div className="footer-section">
           <FaPhone className="footer-icon" />
-          <span>Phone: +1 551 328 8691</span>
+          <span>+1 (551)-328-8691</span>
         </div>
+
+        {/* Location Section */}
         <div className="footer-section">
           <FaMapMarkerAlt className="footer-icon" />
-          <span>Location: Jersey City, NJ</span>
+          <span>Jersey City, NJ</span>
         </div>
+
+        {/* Social Media Links */}
         <div className="footer-section">
           <a
             href="https://github.com/Manan2606"

@@ -37,3 +37,52 @@
   font-style: italic;
   color: #777;
 }
+
+/* New styles for icon, description list, impact, and technologies */
+.description-item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.description-item .icon {
+  color: #4CAF50; /* Green color for check icon */
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.experience-description h4 {
+  margin-top: 1rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.experience-impact {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+}
+
+.experience-technologies {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.technology-item {
+  margin-right: 8px;
+  color: #0073e6;
+  font-weight: 500;
+}
+
+.separator {
+  margin: 0 6px;
+  color: #888;
+  font-weight: 600;
+}
