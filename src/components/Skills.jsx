@@ -16,6 +16,7 @@ import {
   FaWordpress,
   FaFigma,
   FaTools,
+  FaDocker, // Added Docker icon
 } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
 import "../css/skills.css";
@@ -42,6 +43,7 @@ const Skills = () => {
         { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
         { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
         { name: "WordPress", icon: <FaWordpress />, color: "#21759B" },
+        { name: "Docker", icon: <FaDocker />, color: "#2496ed" }, // Added Docker
       ],
     },
     {

@@ -1,32 +1,103 @@
+/* About Section Styling */
 .about-section {
   display: flex;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 6rem 1.5rem;
+  margin-top: 2rem;
+  background-color: #f9f9f9;
 }
 
 .about-content {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.center-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.about-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(135deg, #ff6600, #ffcc00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Text Glow Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 102, 0, 0.8), 0 0 30px rgba(255, 204, 0, 0.6);
+  }
+}
+
+.about-description-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
 }
 
 .about-left {
   flex: 1;
-  text-align: left; /* Align text to the left */
+  text-align: left;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
 .about-right {
   flex: 1;
   display: flex;
-  align-items: center; /* Align items vertically center */
+  justify-content: center;
+  align-items: center;
 }
 
 .about-photo {
   width: 100%;
   max-width: 300px;
   height: auto;
-  max-height: 300px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about-description-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left, .about-right {
+    text-align: center;
+  }
+
+  .about-name {
+    font-size: 2.5rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
 }

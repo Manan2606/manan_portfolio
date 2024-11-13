@@ -29,9 +29,9 @@ const ExperienceItem = ({ experience }) => {
         <div className="technology-list">
           {experience.technologies.map((tech, index) => (
             <span key={index} className="technology-item">
-              {tech}{" "}
+              {tech}
               {index < experience.technologies.length - 1 && (
-                <span className="separator">|</span>
+                <span className="separator"></span>
               )}
             </span>
           ))}

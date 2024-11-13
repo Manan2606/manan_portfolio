@@ -1,20 +1,41 @@
 /* Education Section Styles */
-.education-list {
+#education {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #e6f2ff, #ffffff); /* Subtle gradient */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.education-timeline {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 2.5rem;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #007bff;
 }
 
 .education-item {
-  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  width: calc(50% - 4rem); /* Two items per row */
-  max-width: 400px;
-  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -23,25 +44,72 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.education-item h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
+.education-icon {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
 }
 
-.education-item p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #666;
+.education-content h3 {
+  font-size: 1.5rem;
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
+.education-content .degree,
+.education-content .duration,
+.education-content .gpa {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.degree {
+  font-weight: bold;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.duration,
+.gpa {
+  font-style: italic;
+  color: #666;
+}
+
 @media (max-width: 768px) {
-  .education-list {
-    padding: 1rem;
-  }
-  
   .education-item {
-    width: calc(100% - 2rem); /* Full width on smaller screens */
+    width: 100%;
   }
+
+  .education-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Coursework Section Styles */
+.coursework-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.coursework-item {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.coursework-item:hover {
+  background-color: #0056b3; /* Slightly darker on hover */
 }

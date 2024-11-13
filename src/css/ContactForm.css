@@ -1,59 +1,136 @@
 /* Form Styles */
-.contact-form {
-  background-color: #fff;
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the content vertically */
+  align-items: center; /* Centers the content horizontally */
+  height: 100vh; /* Full viewport height to center the form in the middle */
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  background-color: #f7f9fc; /* Light background */
+}
+
+.contact-form {
+  background: linear-gradient(135deg, #e0f7fa, #80deea); /* Subtle gradient effect */
+  padding: 2rem;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  max-width: 600px; /* Limit form width for better appearance */
+  box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
+}
+
+.contact-form:hover {
+  transform: translateY(-5px); /* Slight hover effect for the form */
 }
 
 .contact-form h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .contact-form label {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   display: block;
+  color: #333;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: calc(100% - 16px);
+  width: 100%; /* Ensure the fields fill the container */
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px; /* Slightly more rounded */
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
 }
 
 .contact-form textarea {
-  height: 150px;
+  height: 150px; /* Fixed height for the message box */
+  max-height: 200px; /* Max height to prevent it from stretching too much */
+  max-width: 100%;
+  overflow-y: auto; /* Adds a scrollbar when content exceeds max height */
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-  border-color: #333;
+  border-color: #00796b; /* More vibrant focus color */
+  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Adding a subtle glow */
 }
 
 .contact-form button {
-  background-color: #333;
+  background-color: #00796b; /* Teal color */
   color: #fff;
   border: none;
   padding: 1rem 2rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   display: block;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 6px; /* Rounded corners */
 }
 
 .contact-form button:hover {
-  background-color: #555;
+  background-color: #004d40; /* Darker teal on hover */
+  transform: scale(1.05); /* Subtle scale effect on hover */
+}
+
+.contact-form button:active {
+  transform: scale(1); /* Remove scale effect when button is pressed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact {
+    height: auto; /* Allow the section to adjust height on smaller screens */
+    padding: 2rem 1rem; /* Adjust padding on smaller screens */
+  }
+
+  .contact-form {
+    max-width: 100%; /* Allow the form to fill the width on small screens */
+    padding: 1.5rem; /* Reduce padding inside the form */
+  }
+
+  .contact-form h2 {
+    font-size: 1.5rem; /* Reduce the size of the heading */
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 0.8rem; /* Slightly reduce padding for smaller screens */
+    font-size: 0.9rem; /* Reduce font size slightly */
+  }
+
+  .contact-form button {
+    padding: 0.8rem 1.5rem; /* Adjust button size */
+    font-size: 1rem; /* Reduce font size of button */
+  }
+}
+
+/* For very small screens (mobile) */
+@media (max-width: 480px) {
+  .contact-form h2 {
+    font-size: 1.3rem; /* Further reduce heading size */
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 0.6rem; /* Further reduce padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .contact-form button {
+    padding: 0.8rem 1.2rem; /* Adjust button size */
+    font-size: 0.9rem; /* Adjust font size */
+  }
 }

@@ -7,7 +7,6 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import "./css/styles.css";
 
 function App() {
   return (
