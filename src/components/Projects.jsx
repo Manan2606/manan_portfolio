@@ -7,16 +7,6 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Master Patient Index",
-      description: [
-        "Developed a single-page web application for hospital operations using Vue.js and Laravel, enhancing data efficiency by 30%.",
-        "Managed patient and staff information with a MySQL database for improved accessibility.",
-        "Automated bill generation and appointment scheduling processes, reducing manual tasks.",
-      ],
-      techStack: ["Vue.js", "Laravel", "MySQL"],
-    },
-    {
-      id: 2,
       title: "Prepstation",
       description: [
         "Created a web app for online examinations with features like exam creation, result tracking, and profile management.",
@@ -26,7 +16,7 @@ const Projects = () => {
       techStack: ["React.js", "Node.js", "JavaScript"],
     },
     {
-      id: 3,
+      id: 2,
       title: "Spendee",
       description: [
         "Designed a budget management app to track expenses, visualize spending patterns, and manage balances.",
@@ -36,7 +26,7 @@ const Projects = () => {
       techStack: ["Java", "Android Studio"],
     },
     {
-      id: 4,
+      id: 3,
       title: "Lung Cancer Detection",
       description: [
         "Built an application for early detection of lung cancer using a CNN model and high-resolution lung scans.",
@@ -46,7 +36,7 @@ const Projects = () => {
       techStack: ["Python", "TensorFlow", "CNN"],
     },
     {
-      id: 5,
+      id: 4,
       title: "Blood Stroke Clot",
       description: [
         "Differentiated between major acute ischemic stroke (AIS) subtypes using a CNN model.",
@@ -56,7 +46,7 @@ const Projects = () => {
       techStack: ["Python", "Machine Learning", "CNN"],
     },
     {
-      id: 6,
+      id: 5,
       title: "Morris Health Service",
       description: [
         "Developed a Health Service Management system with CRUD functionalities for employees and facilities.",
