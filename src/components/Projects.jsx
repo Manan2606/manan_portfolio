@@ -56,6 +56,17 @@ const Projects = () => {
       ],
       techStack: ["PHP", "JavaScript", "HTML", "CSS", "MySQL"],
     },
+    {
+      id: 6,
+      title: "Analysis of Climate Weather Surface of Brazil Hourly with Hadoop",
+      description: [
+        "Analyzed large-scale weather data from the southeastern region of Brazil to explore key patterns in temperature, humidity, and wind.",
+        "The dataset, sourced from Kaggle, provided hourly weather data across multiple stations, which was processed using Hadoop MapReduce to answer critical questions regarding temperature trends, humidity-dew point correlation, and wind patterns.",
+        "Data Analysis: Developed MapReduce jobs to analyze dry bulb temperature, relative humidity, dew point, and wind speed variations over time.",
+        "Performance Optimization: Improved job execution times by optimizing memory allocation, using parallel processing, and adjusting resource allocation.",
+      ],
+      techStack: ["Java", "Hadoop", "HDFS", "Oozie", "Python"],
+    },
   ];
 
   return (
