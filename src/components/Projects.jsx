@@ -67,6 +67,18 @@ const Projects = () => {
       ],
       techStack: ["Java", "Hadoop", "HDFS", "Oozie", "Python"],
     },
+    {
+      id: 7,
+      title: "Automated Web Scraping and Analysis of Journal Articles",
+      description: [
+        "Automated the scraping and analysis of journal articles from Mobile DNA Journal to gather information such as titles, authors, abstracts, publication dates, keywords, and corresponding authors.",
+        "Implemented helper functions for extracting article metadata and visualizing publication trends, author contributions, and keyword frequency.",
+        "Designed publication trend analysis and keyword frequency visualizations using `ggplot2` and `viridis`.",
+        "Preprocessed and cleaned datasets to remove duplicates, handle missing values, and ensure reliable analysis.",
+        "Saved processed data to CSV for seamless sharing and further use.",
+      ],
+      techStack: ["R", "rvest", "dplyr", "ggplot2", "stringr", "tidyr"],
+    },
   ];
 
   return (
