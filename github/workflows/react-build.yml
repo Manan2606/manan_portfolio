@@ -28,9 +28,3 @@ jobs:
       - name: Run Build
         run: |
           npm run build  # Run the build script from package.json
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main' # This condition deploys only from the main branch
-        run: |
-          npm install -g gh-pages  # Install the gh-pages package globally
-          npm run deploy  # Assuming you have a "deploy" script in package.json to deploy to GitHub Pages

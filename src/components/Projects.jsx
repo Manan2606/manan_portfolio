@@ -79,6 +79,22 @@ const Projects = () => {
       ],
       techStack: ["R", "rvest", "dplyr", "ggplot2", "stringr", "tidyr"],
     },
+    {
+      id: 8,
+      title: "User Management System",
+      description: [
+        "Developed a Python-based FastAPI application to manage user accounts, roles, authentication, and profile information.",
+        "Integrated PostgreSQL for secure and scalable data storage.",
+        "Implemented JWT-based authentication and role-based access control for ADMIN, MANAGER, AUTHENTICATED, and ANONYMOUS roles.",
+        "Enabled user profile updates and professional status upgrades by admins or managers through dedicated API endpoints.",
+        "Designed robust email verification workflows and enhanced password validation to ensure security and user trust.",
+        "Incorporated HATEOAS links in API responses for better API discoverability and navigation.",
+        "Achieved high code coverage with over 25 automated test cases using pytest and pytest-cov.",
+        "Resolved critical issues like email validation errors, role mismanagement, and nickname generation conflicts.",
+        "Containerized the application with Docker for seamless deployment and scalability.",
+      ],
+      techStack: ["Python", "FastAPI", "PostgreSQL", "Docker", "pytest", "JWT"],
+    },
   ];
 
   return (
