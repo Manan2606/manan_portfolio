@@ -38,7 +38,7 @@ const Education = () => {
 
   return (
     <section id="education">
-      <h2>Education</h2>
+      <h1>Education</h1>
       <div className="education-timeline">
         {educationList.map((education) => (
           <div key={education.id} className="education-item">

@@ -1,8 +1,23 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Footer Container */
 .footer {
-  background: #1f1f1f;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
+  background: #121212; /* Dark background for modern feel */
+  color: #f1f1f1;
+  padding: 50px 20px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -10,44 +25,100 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  max-width: 800px;
+  gap: 30px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* Footer section styling */
+/* Footer Section */
 .footer-section {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #bfbfbf;
-  font-size: 16px;
+  gap: 12px;
+  color: #bbb;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Icon Style */
+.footer-icon {
+  font-size: 30px;
+  color: #00bcd4; /* Light cyan for icon color */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #ffffff;
+  transform: translateY(-4px); /* Subtle hover animation */
+}
+
+/* Text and Link Styling */
+.footer-section span {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .footer-section a {
-  color: #00adb5;
+  color: #00bcd4;
+  font-size: 1.2rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-section a:hover {
   color: #ffffff;
+  transform: translateX(4px); /* Slight movement on hover */
 }
 
-.footer-icon {
-  font-size: 28px;
-  color: #00adb5;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-section {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1rem;
+  }
+
+  .footer-icon {
+    font-size: 35px; /* Slightly larger icons for mobile */
+  }
 }
 
-/* Responsive Styles */
+/* Large screen responsiveness */
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
-  .footer-sections {
-    flex-direction: row;
-    gap: 50px;
+  .footer-section {
+    gap: 30px;
   }
+}
+
+/* Add a subtle gradient background */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1f1f1f, #121212);
+  z-index: -1; /* Make sure gradient stays behind the content */
+}
+
+/* Section Footer Styling */
+.footer-content::after {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 30px;
+  color: #bbb;
+  opacity: 0.7;
 }

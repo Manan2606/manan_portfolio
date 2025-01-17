@@ -1,17 +1,78 @@
 /* Education Section Styles */
 #education {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #e6f2ff, #ffffff); /* Subtle gradient */
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle, #eef7ff, #d7eaff);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+#education::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 180deg,
+    rgba(0, 123, 255, 0.15),
+    rgba(0, 123, 255, 0) 75%
+  );
+  z-index: -1;
+  animation: rotate-bg 10s linear infinite;
+}
+
+@keyframes rotate-bg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#education h1 {
+  font-size: 3rem; /* Larger size */
+  font-weight: bold;
+  color: #004085; /* Darker shade for better contrast */
+  text-transform: uppercase; /* Make it uppercase for emphasis */
+  letter-spacing: 3px; /* Add spacing between letters */
+  margin-bottom: 2rem; /* Add spacing below the heading */
+  position: relative; /* For decorative effect */
+  display: inline-block; /* Centers the heading nicely */
+}
+
+#education h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* Slightly below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%; /* Underline width */
+  height: 4px; /* Underline thickness */
+  background: linear-gradient(90deg, #007bff, #00c6ff); /* Gradient underline */
+  border-radius: 2px; /* Rounded underline edges */
+  animation: expand-line 0.6s ease forwards; /* Subtle animation effect */
+}
+
+@keyframes expand-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
 }
 
 .education-timeline {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
   position: relative;
   padding-left: 2rem;
 }
@@ -22,48 +83,78 @@
   left: 2.5rem;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background-color: #007bff;
+  width: 5px;
+  background: linear-gradient(180deg, #007bff, #0056b3);
+  border-radius: 5px;
 }
 
 .education-item {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
   width: 80%;
-  max-width: 500px;
+  max-width: 600px;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s ease;
 }
 
 .education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 .education-icon {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
   color: #fff;
   border-radius: 50%;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
+  padding: 1rem;
+  font-size: 2rem;
+  margin-right: 2rem;
   flex-shrink: 0;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-icon:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.7);
 }
 
 .education-content h3 {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #222;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.education-content h3:hover::after {
+  transform: scaleX(1);
 }
 
 .education-content .degree,
 .education-content .duration,
 .education-content .gpa {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555;
 }
 
@@ -76,12 +167,39 @@
 .duration,
 .gpa {
   font-style: italic;
-  color: #666;
+  color: #777;
 }
 
+.coursework-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.coursework-item {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  transition: background 0.4s ease, transform 0.4s ease;
+}
+
+.coursework-item:hover {
+  background: linear-gradient(135deg, #0056b3, #004080);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .education-item {
-    width: 100%;
+    width: 90%;
   }
 
   .education-timeline::before {
@@ -90,26 +208,19 @@
   }
 }
 
-/* Coursework Section Styles */
-.coursework-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0;
-  list-style: none;
-}
+@media (max-width: 480px) {
+  .education-icon {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
 
-.coursework-item {
-  background-color: #007bff;
-  color: #fff;
-  font-size: 0.9rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 20px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
+  .education-content h3 {
+    font-size: 1.5rem;
+  }
 
-.coursework-item:hover {
-  background-color: #0056b3; /* Slightly darker on hover */
+  .education-content .degree,
+  .education-content .duration,
+  .education-content .gpa {
+    font-size: 1rem;
+  }
 }

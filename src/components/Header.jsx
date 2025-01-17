@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 import React, { useState, useEffect } from "react";
 import "../css/Header.css";
 import Logo from "../Logo.png";
@@ -16,11 +15,9 @@ const Header = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-content">
-        <div className="header-left">
-          <img src={Logo} alt="Logo" className="logo" />
-        </div>
+        <img src={Logo} alt="Logo" className="logo" />
         <nav className="nav-links">
-          {["Home", "About", "Projects", "Skills", "Contact"].map((section) => (
+          {["Home", "Projects", "Skills", "Contact"].map((section) => (
             <Link
               key={section}
               to={section.toLowerCase()}

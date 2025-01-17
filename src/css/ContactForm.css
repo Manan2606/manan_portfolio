@@ -1,136 +1,167 @@
-/* Form Styles */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fafafa;
+  color: #444;
+}
+
+/* Contact Section */
 #contact {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers the content vertically */
-  align-items: center; /* Centers the content horizontally */
-  height: 100vh; /* Full viewport height to center the form in the middle */
-  padding: 2rem;
-  background-color: #f7f9fc; /* Light background */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+  background-color: #eef3f8;
+  position: relative;
 }
 
+/* Heading */
+#contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem; /* Increased margin-bottom for better spacing */
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+#contact h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #00bcd4; /* Stylish underline */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Form Styles */
 .contact-form {
-  background: linear-gradient(135deg, #e0f7fa, #80deea); /* Subtle gradient effect */
-  padding: 2rem;
-  border-radius: 12px; /* Slightly more rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 650px;
   width: 100%;
-  max-width: 600px; /* Limit form width for better appearance */
-  box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #ddd;
 }
 
 .contact-form:hover {
-  transform: translateY(-5px); /* Slight hover effect for the form */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More dynamic hover effect */
 }
 
 .contact-form h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
   color: #333;
 }
 
-.contact-form label {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  display: block;
-  color: #333;
+/* Form Fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
 }
 
 .contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%; /* Ensure the fields fill the container */
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px; /* Slightly more rounded */
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
+.contact-form input[type="email"] {
+  height: 50px;
 }
 
 .contact-form textarea {
-  height: 150px; /* Fixed height for the message box */
-  max-height: 200px; /* Max height to prevent it from stretching too much */
-  max-width: 100%;
-  overflow-y: auto; /* Adds a scrollbar when content exceeds max height */
+  height: 180px;
+  max-height: 250px;
+  resize: none;
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-  border-color: #00796b; /* More vibrant focus color */
-  box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Adding a subtle glow */
-}
-
+/* Button Styles */
 .contact-form button {
-  background-color: #00796b; /* Teal color */
+  background-color: #00bcd4;
   color: #fff;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: block;
+  border-radius: 8px;
   width: 100%;
-  border-radius: 6px; /* Rounded corners */
+  margin-bottom: 2.5rem; /* Increased margin-bottom for spacing */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #004d40; /* Darker teal on hover */
-  transform: scale(1.05); /* Subtle scale effect on hover */
+  background-color: #008c9e;
+  transform: translateY(-3px);
 }
 
 .contact-form button:active {
-  transform: scale(1); /* Remove scale effect when button is pressed */
+  transform: translateY(0);
 }
 
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
   #contact {
-    height: auto; /* Allow the section to adjust height on smaller screens */
-    padding: 2rem 1rem; /* Adjust padding on smaller screens */
+    padding: 2rem 1rem;
   }
 
   .contact-form {
-    max-width: 100%; /* Allow the form to fill the width on small screens */
-    padding: 1.5rem; /* Reduce padding inside the form */
+    max-width: 100%;
+    padding: 2rem;
   }
 
   .contact-form h2 {
-    font-size: 1.5rem; /* Reduce the size of the heading */
+    font-size: 1.6rem;
   }
 
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
+  .contact-form input,
   .contact-form textarea {
-    padding: 0.8rem; /* Slightly reduce padding for smaller screens */
-    font-size: 0.9rem; /* Reduce font size slightly */
+    padding: 1rem;
+    font-size: 1rem;
   }
 
   .contact-form button {
-    padding: 0.8rem 1.5rem; /* Adjust button size */
-    font-size: 1rem; /* Reduce font size of button */
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
 }
 
-/* For very small screens (mobile) */
 @media (max-width: 480px) {
   .contact-form h2 {
-    font-size: 1.3rem; /* Further reduce heading size */
+    font-size: 1.4rem;
   }
 
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
+  .contact-form input,
   .contact-form textarea {
-    padding: 0.6rem; /* Further reduce padding */
-    font-size: 0.9rem; /* Adjust font size */
+    padding: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .contact-form button {
-    padding: 0.8rem 1.2rem; /* Adjust button size */
-    font-size: 0.9rem; /* Adjust font size */
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
   }
 }
