@@ -7,6 +7,7 @@
   margin-top: 2rem;
   background: linear-gradient(180deg, #f8f9fa, #e9ecef);
   transition: background 0.5s ease;
+  padding-top: 8rem; /* Added padding-top to prevent overlap with the fixed header */
 }
 
 .about-section:hover {

@@ -2,7 +2,7 @@
 
 .download-button-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -22,11 +22,11 @@
 
 .download-button:hover {
   background: linear-gradient(135deg, #0056b3, #004494);
-  transform: scale(1.05); /* Slightly enlarge the button */
-  box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.7); /* Glow effect */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.7);
 }
 
 .download-button:active {
-  transform: scale(0.98); /* Subtle press effect */
+  transform: scale(0.98);
   box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);
 }

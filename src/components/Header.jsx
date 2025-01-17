@@ -17,10 +17,10 @@ const Header = () => {
       <div className="header-content">
         <img src={Logo} alt="Logo" className="logo" />
         <nav className="nav-links">
-          {["Home", "Projects", "Skills", "Contact"].map((section) => (
+          {["About", "Projects", "Skills", "Contact"].map((section) => (
             <Link
               key={section}
-              to={section.toLowerCase()}
+              to={section.toLowerCase()} // Ensure the target matches the section ID
               smooth={true}
               duration={500}
               className="nav-link"

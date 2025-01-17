@@ -37,6 +37,7 @@ body {
   align-items: center;
   max-width: 1300px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .logo {
@@ -92,19 +93,42 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .header {
+    padding: 1rem;  /* Adjust padding for smaller screens */
+  }
+
   .header-content {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: 100%;  /* Ensure it takes the full width */
+  }
+
+  .logo {
+    max-height: 40px;  /* Reduce logo size for mobile */
   }
 
   .nav-links {
     margin-top: 1rem;
-    gap: 1.5rem;
+    gap: 1rem;
+    justify-content: center;  /* Center the nav links */
+    width: 100%;
   }
 
   .nav-link {
     font-size: 1.2rem;
     padding: 0.6rem 1rem;
+    text-align: center;  /* Center the nav links text */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-height: 35px;  /* Further reduce the logo size */
+  }
+
+  .nav-link {
+    font-size: 1rem;  /* Adjust font size for very small screens */
+    padding: 0.6rem 0.8rem;
   }
 }

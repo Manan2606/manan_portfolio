@@ -206,6 +206,24 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  #education h1 {
+    font-size: 2.5rem; /* Adjusted heading size */
+    letter-spacing: 2px;
+  }
+
+  .education-icon {
+    font-size: 1.8rem; /* Reduced icon size */
+    padding: 0.8rem; /* Adjusted padding */
+  }
+
+  .education-content h3 {
+    font-size: 1.6rem; /* Slightly smaller subheading */
+  }
+
+  .coursework-item {
+    font-size: 0.9rem; /* Smaller coursework items */
+  }
 }
 
 @media (max-width: 480px) {
@@ -222,5 +240,13 @@
   .education-content .duration,
   .education-content .gpa {
     font-size: 1rem;
+  }
+
+  .coursework-item {
+    font-size: 0.85rem;
+  }
+
+  #education h1 {
+    font-size: 2rem; /* Adjusted for even smaller screens */
   }
 }
