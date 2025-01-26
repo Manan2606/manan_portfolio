@@ -2,7 +2,6 @@ import React from "react";
 import {
   FaHtml5,
   FaCss3Alt,
-  FaBootstrap,
   FaJs,
   FaReact,
   FaNodeJs,
@@ -12,9 +11,8 @@ import {
   FaGitAlt,
   FaAws,
   FaWordpress,
-  FaFigma,
   FaTools,
-  FaDocker, // Added Docker icon
+  FaDocker,
   FaAndroid,
 } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
@@ -38,12 +36,15 @@ const Skills = () => {
       ],
     },
     {
+      category: "Cloud",
+      skills: [{ name: "AWS", icon: <FaAws />, color: "#FF9900" }],
+    },
+    {
       category: "Tools",
       skills: [
         { name: "REST APIs", icon: <FaTools />, color: "#FF6F00" },
         { name: "WordPress", icon: <FaWordpress />, color: "#21759B" },
         { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
-        { name: "AWS", icon: <FaAws />, color: "#FF9900" },
         { name: "Docker", icon: <FaDocker />, color: "#2496ed" },
       ],
     },
