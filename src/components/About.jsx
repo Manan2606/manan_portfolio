@@ -13,42 +13,49 @@ const About = () => {
         <div className="about-description-container">
           <div className="about-left">
             <p className="about-description">
-              I recently graduated with a Master’s in Computer Science from
-              NJIT, earning a 3.9 GPA. I’m passionate about crafting scalable,
-              creative, and efficient solutions in full-stack web development
-              and data-driven applications. My skill set covers a broad range of
-              technologies, including React.js, Node.js, FastAPI, and Hadoop,
-              allowing me to produce results that satisfy both user expectations
-              and business goals.
+              I recently graduated with a{" "}
+              <strong>Master's in Computer Science</strong> from
+              <strong> NJIT</strong>, earning a <strong>3.9 GPA</strong>. I'm
+              passionate about crafting scalable, creative, and efficient
+              solutions in <strong>full-stack web development </strong>
+              and <strong>data-driven applications</strong>. My skill set spans
+              technologies like
+              <strong> React.js</strong>, <strong>Node.js</strong>,{" "}
+              <strong>FastAPI</strong>, and <strong>Hadoop</strong>, enabling me
+              to build solutions that exceed expectations.
             </p>
             <p className="about-description">
-              During my career, I’ve delivered meaningful results at H2 Techno
-              World and Crown Software by building systems that boosted
-              efficiency and improved user experiences. At H2 Techno World, I
-              created a tax invoice system with strong authentication features,
-              cutting manual errors by 30%. At Crown Software, I refined
-              database queries, achieving a 40% performance boost.
+              My professional experience at <strong>H2 Techno World</strong> and{" "}
+              <strong>Crown Software </strong>
+              includes building systems that enhanced performance and user
+              satisfaction. At H2 Techno World, I built a secure tax invoice
+              system with MFA, reducing manual errors by <strong>30%</strong>.
+              At Crown Software, I optimized database queries, boosting
+              performance by <strong>40%</strong>.
             </p>
             <p className="about-description">
-              Beyond my professional roles, I’ve tackled several standout
-              projects that showcase my abilities:
+              <strong>Highlighted Projects:</strong>
               <ul>
                 <li>
-                  Built a secure, scalable user management system using
-                  JWT-based authentication and role-based access control.
+                  Developed a{" "}
+                  <strong>JWT-authenticated user management system</strong> with
+                  role-based access control.
                 </li>
                 <li>
-                  Created a hospital management system with Vue.js and Laravel,
-                  simplifying data handling for over 1,000 patient records.
+                  Created a <strong>hospital management platform</strong> using
+                  Vue.js and Laravel, managing over{" "}
+                  <strong>1,000 patient records</strong> efficiently.
                 </li>
                 <li>
-                  Conducted in-depth Brazilian weather data analysis with Hadoop
-                  MapReduce and AWS for efficient parallel processing.
+                  Executed large-scale{" "}
+                  <strong>Brazilian weather data analysis</strong> using Hadoop
+                  MapReduce and AWS.
                 </li>
               </ul>
-              I also bring practical expertise in developing responsive web
-              applications, applying machine learning models, and streamlining
-              processes with Docker and CI/CD tools.
+              I also have practical expertise in building{" "}
+              <strong>responsive web apps</strong>, deploying{" "}
+              <strong>ML models</strong>, and streamlining workflows with{" "}
+              <strong>Docker</strong> and <strong>CI/CD</strong>.
             </p>
             <DownloadButton />
           </div>
