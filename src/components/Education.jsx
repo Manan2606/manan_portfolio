@@ -1,7 +1,12 @@
 // src/components/Education.jsx
 import React from "react";
 import "../css/Education.css";
-import { FaUniversity } from "react-icons/fa";
+import {
+  FaUniversity,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaStar,
+} from "react-icons/fa";
 
 const Education = () => {
   const educationList = [
@@ -24,7 +29,7 @@ const Education = () => {
       institution: "CHARUSAT UNIVERSITY",
       degree: "B.Tech. in Computer Engineering",
       duration: "07/2019 – 05/2023",
-      gpa: "GPA-9.75 / 10.00",
+      gpa: "GPA-3.92 / 4.00",
       coursework: [
         "Operating Systems",
         "Database Management",
@@ -39,24 +44,44 @@ const Education = () => {
   return (
     <section id="education">
       <h1>Education</h1>
-      <div className="education-timeline">
+      <div className="education-grid">
         {educationList.map((education) => (
-          <div key={education.id} className="education-item">
-            <span className="education-icon">
-              <FaUniversity />
-            </span>
-            <div className="education-content">
-              <h3>{education.institution}</h3>
-              <p className="degree">{education.degree}</p>
-              <p className="duration">{education.duration}</p>
-              <p className="gpa">{education.gpa}</p>
-              <ul className="coursework-list">
-                {education.coursework.map((course, index) => (
-                  <li key={index} className="coursework-item">
-                    {course}
-                  </li>
-                ))}
-              </ul>
+          <div key={education.id} className="education-card">
+            <div className="education-card-header">
+              <div className="institution-icon">
+                <FaUniversity />
+              </div>
+              <div className="institution-info">
+                <h3>{education.institution}</h3>
+                <div className="degree-info">
+                  <FaGraduationCap className="degree-icon" />
+                  <span>{education.degree}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="education-card-body">
+              <div className="education-details">
+                <div className="detail-item">
+                  <FaCalendarAlt className="detail-icon" />
+                  <span>{education.duration}</span>
+                </div>
+                <div className="detail-item">
+                  <FaStar className="detail-icon" />
+                  <span>{education.gpa}</span>
+                </div>
+              </div>
+
+              <div className="coursework-section">
+                <h4>Key Courses</h4>
+                <div className="coursework-grid">
+                  {education.coursework.map((course, index) => (
+                    <div key={index} className="course-item">
+                      {course}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}

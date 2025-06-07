@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCircle, FaStar, FaTools } from "react-icons/fa"; // Import chosen icons
+import { FaCheckCircle, FaStar, FaTools } from "react-icons/fa";
 import "../css/Experience.css";
 
 const ExperienceItem = ({ experience }) => {
@@ -13,7 +13,7 @@ const ExperienceItem = ({ experience }) => {
         <h4>Description:</h4>
         {experience.description.map((item, index) => (
           <div key={index} className="description-item">
-            <FaCircle className="icon" /> <span>{item}</span>
+            <FaCheckCircle className="icon" /> <span>{item}</span>
           </div>
         ))}
       </div>

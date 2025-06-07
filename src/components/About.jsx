@@ -1,66 +1,94 @@
 import React from "react";
 import "../css/About.css";
-import Image from "../Image.jpg";
+import NewPhoto from "../Resume_Profile.jpg";
 import DownloadButton from "./DownloadButton";
 
 const About = () => {
   return (
-    <section id="about" className="about-section">
-      <div className="about-content">
-        <div className="center-name">
-          <h2 className="about-name">MANAN SHAH</h2>
+    <section
+      id="about"
+      className="about-section modern-about"
+      aria-labelledby="about-heading"
+    >
+      <div className="about-card">
+        <div className="about-photo-container">
+          <img
+            src={NewPhoto}
+            alt="Manan Shah - Full Stack Developer"
+            className="about-photo-modern"
+            loading="eager"
+            width="320"
+            height="320"
+          />
         </div>
-        <div className="about-description-container">
-          <div className="about-left">
+        <div className="about-info">
+          <div className="about-accent-bar">
+            <h2 id="about-heading" className="about-name-modern">
+              MANAN SHAH
+            </h2>
+            <span className="about-title">Full Stack Developer</span>
+          </div>
+          <div className="about-text-modern">
             <p className="about-description">
-              I recently graduated with a{" "}
-              <strong>Master's in Computer Science</strong> from
-              <strong> NJIT</strong>, earning a <strong>3.9 GPA</strong>. I'm
-              passionate about crafting scalable, creative, and efficient
-              solutions in <strong>full-stack web development </strong>
-              and <strong>data-driven applications</strong>. My skill set spans
-              technologies like
-              <strong> React.js</strong>, <strong>Node.js</strong>,{" "}
-              <strong>FastAPI</strong>, and <strong>Hadoop</strong>, enabling me
-              to build solutions that exceed expectations.
+              I’m a passionate <strong>Full Stack Developer</strong> with a
+              <strong> Master’s in Computer Science</strong> from{" "}
+              <strong>NJIT</strong> (GPA: 3.9). I specialize in building
+              scalable, cloud-based solutions using technologies like{" "}
+              <strong>React.js, Node.js, FastAPI, and Laravel</strong>. My
+              experience spans across{" "}
+              <strong>backend systems, REST APIs</strong>,
+              <strong>responsive UI/UX</strong>, and <strong>DevOps</strong>.
             </p>
             <p className="about-description">
-              My professional experience at <strong>H2 Techno World</strong> and{" "}
-              <strong>Crown Software </strong>
-              includes building systems that enhanced performance and user
-              satisfaction. At H2 Techno World, I built a secure tax invoice
-              system with MFA, reducing manual errors by <strong>30%</strong>.
-              At Crown Software, I optimized database queries, boosting
-              performance by <strong>40%</strong>.
+              In my professional roles at <strong>H2 Techno World</strong> and{" "}
+              <strong>Crown Software</strong>, I delivered systems that
+              significantly improved performance. Highlights include a tax
+              invoice system that reduced manual errors by 30% and database
+              optimizations that cut query times by 40%.
             </p>
-            <p className="about-description">
-              <strong>Highlighted Projects:</strong>
-              <ul>
+            <div className="about-projects">
+              <p className="about-description">
+                <strong>Highlighted Projects:</strong>
+              </p>
+              <ul className="project-list" role="list">
                 <li>
-                  Developed a{" "}
-                  <strong>JWT-authenticated user management system</strong> with
-                  role-based access control.
+                  <strong>User Management System</strong>: Built with FastAPI
+                  and PostgreSQL, including JWT security, role-based access, and
+                  HATEOAS API integration. Dockerized for scalable deployment.
                 </li>
                 <li>
-                  Created a <strong>hospital management platform</strong> using
-                  Vue.js and Laravel, managing over{" "}
-                  <strong>1,000 patient records</strong> efficiently.
+                  <strong>Hospital Management App</strong>: Created using Vue.js
+                  and Laravel to manage 1,000+ patient records, with PDF billing
+                  and MySQL integration.
                 </li>
                 <li>
-                  Executed large-scale{" "}
-                  <strong>Brazilian weather data analysis</strong> using Hadoop
-                  MapReduce and AWS.
+                  <strong>Climate Data Analysis</strong>: Processed Brazil’s
+                  weather data using Hadoop MapReduce and AWS, automated with
+                  Oozie.
+                </li>
+                <li>
+                  <strong>Prepstation Exam Platform</strong>: A React.js +
+                  Node.js web platform with exam creation, grading, and result
+                  tracking.
+                </li>
+                <li>
+                  <strong>Stroke & Lung Cancer Detection</strong>: CNN-based
+                  models using Python and TensorFlow for healthcare diagnosis
+                  (85–88% accuracy).
                 </li>
               </ul>
-              I also have practical expertise in building{" "}
-              <strong>responsive web apps</strong>, deploying{" "}
-              <strong>ML models</strong>, and streamlining workflows with{" "}
-              <strong>Docker</strong> and <strong>CI/CD</strong>.
-            </p>
+              <p className="about-description">
+                I also bring hands-on experience with{" "}
+                <strong>
+                  Docker, GitHub CI/CD, TensorFlow, PostgreSQL, MySQL,
+                </strong>{" "}
+                and
+                <strong> AWS Cloud</strong>. I enjoy solving problems that
+                matter — whether it's accelerating data processing or improving
+                health tech through AI.
+              </p>
+            </div>
             <DownloadButton />
-          </div>
-          <div className="about-right">
-            <img src={Image} alt="Manan Shah" className="about-photo" />
           </div>
         </div>
       </div>
