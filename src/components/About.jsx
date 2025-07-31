@@ -14,80 +14,39 @@ const About = () => {
         <div className="about-photo-container">
           <img
             src={NewPhoto}
-            alt="Manan Shah - Full Stack Developer"
+            alt="Manan Shah - Full Stack & AI Engineer"
             className="about-photo-modern"
             loading="eager"
             width="320"
             height="320"
           />
         </div>
+
         <div className="about-info">
           <div className="about-accent-bar">
             <h2 id="about-heading" className="about-name-modern">
               MANAN SHAH
             </h2>
-            <span className="about-title">Full Stack Developer</span>
+            <span className="about-title">Full Stack & AI Engineer</span>
           </div>
+
           <div className="about-text-modern">
             <p className="about-description">
-              I’m a passionate <strong>Full Stack Developer</strong> with a
-              <strong> Master’s in Computer Science</strong> from{" "}
-              <strong>NJIT</strong> (GPA: 3.9). I specialize in building
-              scalable, cloud-based solutions using technologies like{" "}
-              <strong>React.js, Node.js, FastAPI, and Laravel</strong>. My
-              experience spans across{" "}
-              <strong>backend systems, REST APIs</strong>,
-              <strong>responsive UI/UX</strong>, and <strong>DevOps</strong>.
+              Full‑stack software and AI engineer specializing in building
+              secure, scalable, and AI‑driven web applications using{" "}
+              <strong>Python, JavaScript, React.js, PHP, FastAPI,</strong> and{" "}
+              <strong>AWS</strong>. Experienced in{" "}
+              <strong>database management</strong> and{" "}
+              <strong>CI/CD pipelines</strong>, with proven success in{" "}
+              <strong>AI Hackathon</strong> projects.
             </p>
             <p className="about-description">
-              In my professional roles at <strong>H2 Techno World</strong> and{" "}
-              <strong>Crown Software</strong>, I delivered systems that
-              significantly improved performance. Highlights include a tax
-              invoice system that reduced manual errors by 30% and database
-              optimizations that cut query times by 40%.
+              Certified Cloud Developer with expertise in{" "}
+              <strong>cloud deployment</strong> and{" "}
+              <strong>application development</strong>. Passionate about
+              creating solutions that combine web engineering and AI to drive
+              impactful results.
             </p>
-            <div className="about-projects">
-              <p className="about-description">
-                <strong>Highlighted Projects:</strong>
-              </p>
-              <ul className="project-list" role="list">
-                <li>
-                  <strong>User Management System</strong>: Built with FastAPI
-                  and PostgreSQL, including JWT security, role-based access, and
-                  HATEOAS API integration. Dockerized for scalable deployment.
-                </li>
-                <li>
-                  <strong>Hospital Management App</strong>: Created using Vue.js
-                  and Laravel to manage 1,000+ patient records, with PDF billing
-                  and MySQL integration.
-                </li>
-                <li>
-                  <strong>Climate Data Analysis</strong>: Processed Brazil’s
-                  weather data using Hadoop MapReduce and AWS, automated with
-                  Oozie.
-                </li>
-                <li>
-                  <strong>Prepstation Exam Platform</strong>: A React.js +
-                  Node.js web platform with exam creation, grading, and result
-                  tracking.
-                </li>
-                <li>
-                  <strong>Stroke & Lung Cancer Detection</strong>: CNN-based
-                  models using Python and TensorFlow for healthcare diagnosis
-                  (85–88% accuracy).
-                </li>
-              </ul>
-              <p className="about-description">
-                I also bring hands-on experience with{" "}
-                <strong>
-                  Docker, GitHub CI/CD, TensorFlow, PostgreSQL, MySQL,
-                </strong>{" "}
-                and
-                <strong> AWS Cloud</strong>. I enjoy solving problems that
-                matter — whether it's accelerating data processing or improving
-                health tech through AI.
-              </p>
-            </div>
             <DownloadButton />
           </div>
         </div>
