@@ -28,7 +28,7 @@ const Experience = () => {
     },
     {
       id: 2,
-      title: "WEB DEVELOPER",
+      title: "SOFTWARE ENGINEER",
       company: "H2 Techno World",
       duration: "Jul 2023 – Sep 2023",
       description: [
