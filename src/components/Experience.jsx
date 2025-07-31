@@ -6,6 +6,28 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
+      title: "SOFTWARE ENGINEER",
+      company: "H2 Techno World",
+      duration: "Sep 2024 – May 2025",
+      description: [
+        "Designed and deployed a production-grade full-stack inventory and order management platform for SMBs, featuring multi-level role-based access and a responsive React.js frontend powered by a FastAPI backend with MySQL database.",
+        "Consolidated manual audits by 30%, enabling predictive decision-making for supply chain operations.",
+        "Architected containerized microservices with Docker and orchestrated programmatically triggered CI/CD pipelines using GitHub Actions.",
+        "Deployed highly available and scalable services on AWS EC2, ensuring minimal downtime and smooth version rollouts.",
+      ],
+      impact:
+        "Delivered scalable and automated cloud solutions for inventory management.",
+      technologies: [
+        "React.js",
+        "FastAPI",
+        "MySQL",
+        "Docker",
+        "AWS",
+        "GitHub Actions",
+      ],
+    },
+    {
+      id: 2,
       title: "WEB DEVELOPER",
       company: "H2 Techno World",
       duration: "Jul 2023 – Sep 2023",
@@ -19,7 +41,7 @@ const Experience = () => {
       technologies: ["PHP", "JavaScript", "MySQL"],
     },
     {
-      id: 2,
+      id: 3,
       title: "SOFTWARE DEVELOPER",
       company: "Crown Software",
       duration: "Dec 2022 – May 2023",
@@ -32,7 +54,7 @@ const Experience = () => {
       technologies: ["PHP", "JavaScript", "AJAX", "SQL"],
     },
     {
-      id: 3,
+      id: 4,
       title: "WEB DEVELOPER",
       company: "NAVPAD INFOTECH",
       duration: "May 2022 – Jul 2022",
@@ -45,7 +67,7 @@ const Experience = () => {
       technologies: ["Vue.js", "Laravel", "MySQL"],
     },
     {
-      id: 4,
+      id: 5,
       title: "FRONTEND DEVELOPER",
       company: "Sannibh Technology",
       duration: "May 2021 – Jul 2021",

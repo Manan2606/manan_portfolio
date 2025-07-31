@@ -15,10 +15,10 @@ function Certifications() {
     },
     {
       id: 2,
-      title: "AWS Solutions Architect Associate",
+      title: "AWS Cloud Developer Associate",
       icon: "🚀",
       issueDate: "In Progress",
-      estimatedCompletion: "July 2025",
+      estimatedCompletion: "August 10 2025",
       status: "in-progress",
     },
   ];

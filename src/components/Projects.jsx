@@ -92,6 +92,17 @@ const Projects = () => {
       ],
       techStack: ["Python", "FastAPI", "PostgreSQL", "Docker", "pytest", "JWT"],
     },
+    {
+      id: 9,
+      title: "Multi-Agentic Conversational AI System",
+      description: [
+        "Built a full-stack conversational AI system with agentic capabilities combining Retrieval-Augmented Generation (RAG), CRM management, and memory-based interactions.",
+        "Integrated Cohere for LLM-based responses, FAISS for semantic search, and React-based frontend for user and conversation management.",
+        "Designed fully RESTful APIs with structured JSON responses and implemented memory retention for context-aware replies.",
+        "Developed for a multi-agent AI hackathon challenge.",
+      ],
+      techStack: ["FastAPI", "Cohere", "FAISS", "React.js", "RAG"],
+    },
   ];
 
   return (
