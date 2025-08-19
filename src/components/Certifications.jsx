@@ -16,10 +16,12 @@ function Certifications() {
     {
       id: 2,
       title: "AWS Cloud Developer Associate",
-      icon: "🚀",
-      issueDate: "In Progress",
-      estimatedCompletion: "August 10 2025",
-      status: "in-progress",
+      icon: "🎓",
+      credentialId: "f37d2bebbed0493887e2eef436a6284d",
+      issueDate: "August 2025",
+      credentialUrl:
+        "https://drive.google.com/file/d/1YRdxHcck50PO0yk4josS8zRibN7pgEce/view?usp=sharing",
+      status: "completed",
     },
   ];
 

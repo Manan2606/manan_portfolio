@@ -6,7 +6,7 @@ const DownloadButton = () => {
   return (
     <div className="download-button-container">
       <a
-        href="https://drive.google.com/file/d/12ARZhbgF6i5KPxrwY-sQP6kTBLTl2Xx4/view?usp=sharing"
+        href="https://drive.google.com/file/d/1rMZKr7Whj8V5Ef-tAEeWTthtwpHSkb_S/view?usp=sharing"
         className="download-button"
         target="_blank"
         rel="noopener noreferrer"
