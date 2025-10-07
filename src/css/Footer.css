@@ -1,29 +1,10 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
-}
-
-/* Add smooth scrolling to the entire page */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust this value based on your header height */
-}
-
-/* Footer Container */
 .footer {
-  background: #121212;
-  color: #f1f1f1;
-  padding: 4rem 2rem 2rem;
+  background: var(--surface-inverse);
+  color: var(--text-on-inverse);
+  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
   position: relative;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family-base);
+  box-shadow: 0 -10px 30px color-mix(in srgb, var(--surface-inverse) 20%, var(--color-neutral-900) 25%);
 }
 
 .footer-content {
@@ -34,8 +15,8 @@ html {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
 }
 
 /* Footer Sections */
@@ -44,8 +25,9 @@ html {
 }
 
 .footer-section h3 {
-  color: #00bcd4;
-  font-size: 1.5rem;
+  color: var(--color-accent-500);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -58,7 +40,7 @@ html {
   bottom: 0;
   width: 50px;
   height: 2px;
-  background: linear-gradient(90deg, #00bcd4, transparent);
+  background: linear-gradient(90deg, var(--color-accent-500), transparent);
 }
 
 /* Contact Info */
@@ -92,7 +74,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background: #00bcd4;
+  background: var(--color-accent-500);
   transition: width 0.3s ease;
 }
 
@@ -110,7 +92,7 @@ html {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #f1f1f1;
+  color: var(--text-on-inverse);
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.5rem;
@@ -118,14 +100,14 @@ html {
 }
 
 .social-link:hover {
-  color: #00bcd4;
+  color: var(--color-accent-500);
   transform: translateY(-3px);
-  background: rgba(0, 188, 212, 0.1);
+  background: color-mix(in srgb, var(--color-accent-500) 15%, transparent);
 }
 
 /* Footer Links */
 .footer-link {
-  color: #f1f1f1;
+  color: var(--text-on-inverse);
   text-decoration: none;
   transition: all 0.3s ease;
   display: flex;
@@ -136,15 +118,15 @@ html {
 }
 
 .footer-link:hover {
-  color: #00bcd4;
+  color: var(--color-accent-500);
   transform: translateX(5px);
-  background: rgba(0, 188, 212, 0.1);
+  background: color-mix(in srgb, var(--color-accent-500) 15%, transparent);
 }
 
 /* Icons */
 .footer-icon {
   font-size: 1.5rem;
-  color: #00bcd4;
+  color: var(--color-accent-500);
   transition: all 0.3s ease;
 }
 
@@ -152,8 +134,8 @@ html {
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #888;
+  border-top: 1px solid color-mix(in srgb, var(--text-on-inverse) 15%, transparent);
+  color: var(--text-muted-inverse);
   font-size: 0.9rem;
 }
 
@@ -162,8 +144,8 @@ html {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #00bcd4;
-  color: white;
+  background: var(--color-accent-500);
+  color: var(--color-neutral-0);
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -173,14 +155,14 @@ html {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-accent-500) 30%, var(--color-neutral-900) 30%);
   z-index: 1000;
 }
 
 .scroll-top:hover {
-  background: #0097a7;
+  background: var(--color-accent-600);
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--color-accent-500) 45%, var(--color-neutral-900) 35%);
 }
 
 .scroll-top-icon {
@@ -190,7 +172,7 @@ html {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer {
-    padding: 3rem 1rem 1.5rem;
+    padding: var(--space-xl) var(--space-md) var(--space-md);
   }
 
   .footer-grid {
@@ -242,15 +224,15 @@ html {
   }
 
   .footer-section h3 {
-    color: #000;
+    color: var(--color-neutral-900);
   }
 
   .footer-icon {
-    color: #000;
+    color: var(--color-neutral-900);
   }
 
   .footer-link {
-    color: #000;
+    color: var(--color-neutral-900);
   }
 }
 

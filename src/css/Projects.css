@@ -2,9 +2,13 @@
 #projects {
   padding: 4rem 1.5rem 3rem;
   text-align: center;
-  background: linear-gradient(135deg, #f7faff 0%, #e3f2fd 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-neutral-50) 0%,
+    color-mix(in srgb, var(--color-accent-100) 45%, var(--color-neutral-0)) 100%
+  );
   border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-strong);
   margin: 2rem auto;
   max-width: 1400px;
 }
@@ -12,7 +16,7 @@
 #projects h2 {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #ff6600;
+  color: var(--color-primary-500);
   margin-bottom: 2.5rem;
   letter-spacing: 1.5px;
   position: relative;
@@ -26,11 +30,11 @@
 }
 
 .project-item {
-  background: rgba(255,255,255,0.75);
+  background: color-mix(in srgb, var(--color-neutral-0) 80%, transparent);
   border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(255,102,0,0.07);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--color-primary-500) 12%, transparent);
   backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255,102,0,0.08);
+  border: 1.5px solid color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s, border 0.35s;
   text-align: left;
@@ -50,21 +54,21 @@
   left: 0;
   width: 100%;
   height: 6px;
-  background: linear-gradient(90deg, #ff6600 0%, #ffcc00 100%);
+  background: linear-gradient(90deg, var(--color-primary-500) 0%, var(--color-primary-highlight) 100%);
   border-radius: 20px 20px 0 0;
   opacity: 0.85;
 }
 
 .project-item:hover {
   transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 12px 36px rgba(255,102,0,0.13);
-  border: 1.5px solid #ff6600;
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
+  border: 1.5px solid var(--color-primary-500);
 }
 
 .project-item h3 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #222;
+  color: var(--color-neutral-800);
   margin-bottom: 0.7rem;
   margin-top: 0.7rem;
   position: relative;
@@ -77,14 +81,14 @@
   display: block;
   width: 38px;
   height: 3px;
-  background: #ff6600;
+  background: var(--color-primary-500);
   border-radius: 2px;
   margin-top: 0.4rem;
 }
 
 .project-description {
   font-size: 1.01rem;
-  color: #444;
+  color: var(--color-neutral-600);
   line-height: 1.7;
   margin: 1.1rem 0 0.7rem 0;
   padding-left: 1.1rem;
@@ -105,14 +109,14 @@
 }
 
 .tech-item {
-  background: linear-gradient(90deg, #ff6600 0%, #ffcc00 100%);
-  color: #fff;
+  background: linear-gradient(90deg, var(--color-primary-500) 0%, var(--color-primary-highlight) 100%);
+  color: var(--color-neutral-0);
   font-size: 0.87rem;
   padding: 0.32rem 1.1rem;
   border-radius: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(255,102,0,0.07);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   border: none;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   cursor: default;
@@ -120,9 +124,9 @@
 }
 
 .tech-item:hover {
-  background: linear-gradient(90deg, #ffcc00 0%, #ff6600 100%);
-  color: #fffbe6;
-  box-shadow: 0 4px 16px rgba(255,102,0,0.13);
+  background: linear-gradient(90deg, var(--color-primary-highlight) 0%, var(--color-primary-500) 100%);
+  color: var(--color-primary-soft);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
 }
 
 /* Responsive Layout */
