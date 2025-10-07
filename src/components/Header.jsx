@@ -3,6 +3,8 @@ import "../css/Header.css";
 import Logo from "../Logo.png";
 import { Link } from "react-scroll";
 
+const SCROLL_OFFSET = 88; // Keep in sync with --header-height in theme.css
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,6 +25,7 @@ const Header = () => {
               to={section.toLowerCase()} // Ensure the target matches the section ID
               smooth={true}
               duration={500}
+              offset={-SCROLL_OFFSET}
               className="nav-link"
             >
               {section}
