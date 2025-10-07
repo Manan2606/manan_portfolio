@@ -2,9 +2,9 @@
 .certifications-section {
   padding: 5rem 2rem;
   text-align: center;
-  background: radial-gradient(circle, #f3f8ff, #e0f0ff);
+  background: radial-gradient(circle, var(--color-neutral-50), color-mix(in srgb, var(--color-accent-50) 60%, var(--color-neutral-0)));
   border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-strong);
   position: relative;
   z-index: 1;
 }
@@ -12,7 +12,7 @@
 .certifications-section h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #003366;
+  color: color-mix(in srgb, var(--color-accent-600) 70%, var(--color-neutral-900));
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 2rem;
@@ -27,7 +27,7 @@
   transform: translateX(-50%);
   width: 50%;
   height: 4px;
-  background: linear-gradient(90deg, #007bff, #00c6ff);
+  background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-400));
   border-radius: 2px;
 }
 
@@ -47,7 +47,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #007bff, #00c6ff);
+  background: linear-gradient(180deg, var(--color-accent-500), var(--color-accent-400));
   border-radius: 2px;
   opacity: 0.3;
 }
@@ -55,9 +55,9 @@
 .certification-item {
   display: flex;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.95);
+  background: color-mix(in srgb, var(--color-neutral-0) 95%, transparent);
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-accent-500) 15%, var(--color-neutral-900) 15%);
   padding: 2rem;
   width: 80%;
   max-width: 600px;
@@ -69,32 +69,32 @@
 
 .certification-item:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--color-accent-500) 25%, var(--color-neutral-900) 20%);
 }
 
 .certification-item.in-progress {
-  border-left: 4px solid #ffd700;
+  border-left: 4px solid var(--color-warning);
 }
 
 .certification-item.completed {
-  border-left: 4px solid #28a745;
+  border-left: 4px solid var(--color-success);
 }
 
 .certification-icon {
-  background: linear-gradient(135deg, #007bff, #00c6ff);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-400));
+  color: var(--color-neutral-0);
   border-radius: 50%;
   padding: 1rem;
   font-size: 2rem;
   margin-right: 2rem;
   flex-shrink: 0;
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 6px 15px color-mix(in srgb, var(--color-accent-500) 35%, transparent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certification-icon:hover {
   transform: scale(1.2) rotate(10deg);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.7);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-accent-500) 45%, transparent);
 }
 
 .certification-content {
@@ -104,13 +104,13 @@
 
 .certification-content h3 {
   font-size: 1.8rem;
-  color: #222;
+  color: var(--color-neutral-800);
   margin-bottom: 0.5rem;
 }
 
 .credential-id {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
   font-family: monospace;
 }
@@ -118,7 +118,7 @@
 .issued-date,
 .estimated-completion {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-neutral-600);
   font-style: italic;
   margin-bottom: 0.5rem;
 }
@@ -126,24 +126,24 @@
 .view-credential {
   display: inline-block;
   font-size: 1.1rem;
-  color: #007bff;
+  color: var(--color-accent-500);
   text-decoration: none;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border: 2px solid #007bff;
+  border: 2px solid var(--color-accent-500);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .view-credential:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--color-accent-500);
+  color: var(--color-neutral-0);
   transform: translateY(-2px);
 }
 
 .progress-indicator {
   margin-top: 1rem;
-  background-color: #e9ecef;
+  background-color: var(--color-neutral-200);
   border-radius: 8px;
   height: 8px;
   overflow: hidden;
@@ -151,7 +151,7 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #007bff, #00c6ff);
+  background: linear-gradient(90deg, var(--color-accent-500), var(--color-accent-400));
   border-radius: 8px;
   transition: width 0.5s ease;
   animation: progress-animation 2s ease-in-out infinite;
@@ -227,7 +227,7 @@
 
   .certification-item {
     box-shadow: none;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-neutral-300);
   }
 
   .certification-icon {

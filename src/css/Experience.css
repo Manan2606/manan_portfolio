@@ -1,10 +1,14 @@
 /* Experience Section */
 #experience {
   padding: 4rem 1.5rem 3rem;
-  background: linear-gradient(135deg, #f7faff 0%, #e0ecff 100%);
-  color: #333;
+  background: linear-gradient(
+    135deg,
+    var(--color-neutral-50) 0%,
+    color-mix(in srgb, var(--color-accent-50) 55%, var(--color-neutral-0)) 100%
+  );
+  color: var(--color-neutral-700);
   border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-strong);
   margin: 2rem auto;
   max-width: 1400px;
 }
@@ -13,7 +17,7 @@
   text-align: center;
   font-size: 2.3rem;
   font-weight: 800;
-  color: #ff6600;
+  color: var(--color-primary-500);
   margin-bottom: 2.5rem;
   letter-spacing: 1.5px;
   position: relative;
@@ -29,11 +33,11 @@
 
 /* Experience Item */
 .experience-item {
-  background: rgba(255,255,255,0.75);
+  background: color-mix(in srgb, var(--color-neutral-0) 80%, transparent);
   border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(255,102,0,0.07);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--color-primary-500) 12%, transparent);
   backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255,102,0,0.08);
+  border: 1.5px solid color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s, border 0.35s;
   position: relative;
@@ -52,21 +56,21 @@
   top: 0;
   width: 6px;
   height: 100%;
-  background: linear-gradient(180deg, #ff6600 0%, #ffcc00 100%);
+  background: linear-gradient(180deg, var(--color-primary-500) 0%, var(--color-primary-highlight) 100%);
   border-radius: 20px 0 0 20px;
   opacity: 0.85;
 }
 
 .experience-item:hover {
   transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 12px 36px rgba(255,102,0,0.13);
-  border: 1.5px solid #ff6600;
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
+  border: 1.5px solid var(--color-primary-500);
 }
 
 .experience-item h3 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #222;
+  color: var(--color-neutral-800);
   margin-bottom: 0.3rem;
   margin-top: 0.2rem;
   position: relative;
@@ -78,7 +82,7 @@
   display: block;
   width: 38px;
   height: 3px;
-  background: #ff6600;
+  background: var(--color-primary-500);
   border-radius: 2px;
   margin-top: 0.4rem;
 }
@@ -86,7 +90,7 @@
 /* Experience Item Text */
 .experience-item .experience-company {
   font-weight: bold;
-  color: #ff6600;
+  color: var(--color-primary-500);
   font-size: 1.08rem;
   margin-bottom: 0.1rem;
   margin-top: 0.2rem;
@@ -94,7 +98,7 @@
 
 .experience-item .experience-duration {
   font-style: italic;
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.98rem;
   margin-bottom: 0.7rem;
 }
@@ -102,7 +106,7 @@
 /* Description and Impact */
 .experience-description h4 {
   font-size: 1.01rem;
-  color: #444;
+  color: var(--color-neutral-600);
   margin-bottom: 0.3rem;
   margin-top: 0.7rem;
 }
@@ -115,14 +119,14 @@
 
 .description-item {
   margin: 8px 0;
-  color: #444;
+  color: var(--color-neutral-600);
   display: flex;
   align-items: flex-start;
   font-size: 1.01rem;
 }
 
 .description-item .icon {
-  color: #ff6600;
+  color: var(--color-primary-500);
   margin-right: 12px;
   font-size: 1.15rem;
   margin-top: 0.1em;
@@ -134,19 +138,19 @@
 .experience-impact {
   margin-top: 1.1rem;
   font-style: italic;
-  background: linear-gradient(90deg, #fffbe6 0%, #ffe0b2 100%);
-  color: #b26a00;
+  background: linear-gradient(90deg, var(--color-primary-soft) 0%, var(--color-primary-100) 100%);
+  color: var(--color-primary-700);
   padding: 0.7em 1em;
   border-radius: 12px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(255,102,0,0.07);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   display: flex;
   align-items: center;
   gap: 0.5em;
 }
 
 .experience-impact .impact-icon {
-  color: #ffa726;
+  color: var(--color-primary-highlight);
   margin-right: 8px;
 }
 
@@ -164,14 +168,14 @@
 }
 
 .technology-item {
-  background: linear-gradient(90deg, #ff6600 0%, #ffcc00 100%);
-  color: #fff;
+  background: linear-gradient(90deg, var(--color-primary-500) 0%, var(--color-primary-highlight) 100%);
+  color: var(--color-neutral-0);
   font-size: 0.87rem;
   padding: 0.32rem 1.1rem;
   border-radius: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(255,102,0,0.07);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary-500) 15%, transparent);
   border: none;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   cursor: default;
@@ -179,9 +183,9 @@
 }
 
 .technology-item:hover {
-  background: linear-gradient(90deg, #ffcc00 0%, #ff6600 100%);
-  color: #fffbe6;
-  box-shadow: 0 4px 16px rgba(255,102,0,0.13);
+  background: linear-gradient(90deg, var(--color-primary-highlight) 0%, var(--color-primary-500) 100%);
+  color: var(--color-primary-soft);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
 }
 
 /* Responsive Design */
