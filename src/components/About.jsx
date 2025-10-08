@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/About.css";
 import NewPhoto from "../Resume_Profile.jpg";
-import DownloadButton from "./DownloadButton";
 
 const About = () => {
   return (
@@ -47,7 +46,6 @@ const About = () => {
               creating solutions that combine web engineering and AI to drive
               impactful results.
             </p>
-            <DownloadButton />
           </div>
         </div>
       </div>

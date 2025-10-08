@@ -58,8 +58,7 @@ const Header = () => {
         >
           <img src={Logo} alt="Logo" className="logo" />
           <div className="brand-copy">
-            <span className="brand-title">Manan Patel</span>
-            <span className="brand-subtitle">Building experiences with code</span>
+            <span className="brand-title">Manan Shah</span>
           </div>
         </button>
 
@@ -110,7 +109,7 @@ const Header = () => {
             rel="noopener noreferrer"
             onClick={handleNavClick}
           >
-            View Résumé
+            View Resume
           </a>
         </nav>
       </div>
