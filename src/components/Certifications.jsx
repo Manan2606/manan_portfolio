@@ -1,4 +1,4 @@
-import React from "react";
+import { FaAws, FaCheckCircle, FaExternalLinkAlt } from "react-icons/fa";
 import "../css/Certifications.css";
 
 function Certifications() {
@@ -6,83 +6,86 @@ function Certifications() {
     {
       id: 1,
       title: "AWS Certified Cloud Practitioner",
-      icon: "🎓",
+      issuer: "Amazon Web Services",
+      icon: <FaAws />,
       credentialId: "850930ea49954df8982bedf523763637",
       issueDate: "February 2025",
-      credentialUrl:
-        "https://drive.google.com/file/d/1yp1ugGmXy4hWl6kagaZgIBmMeLVjUzaF/view?usp=sharing",
+      credentialUrl: "https://drive.google.com/file/d/1yp1ugGmXy4hWl6kagaZgIBmMeLVjUzaF/view?usp=sharing",
       status: "completed",
+      accent: "#FF9900" 
     },
     {
       id: 2,
       title: "AWS Cloud Developer Associate",
-      icon: "🎓",
+      issuer: "Amazon Web Services",
+      icon: <FaAws />,
       credentialId: "f37d2bebbed0493887e2eef436a6284d",
       issueDate: "August 2025",
-      credentialUrl:
-        "https://drive.google.com/file/d/1YRdxHcck50PO0yk4josS8zRibN7pgEce/view?usp=sharing",
+      credentialUrl: "https://drive.google.com/file/d/1YRdxHcck50PO0yk4josS8zRibN7pgEce/view?usp=sharing",
       status: "completed",
+      accent: "#00a1f1"
     },
   ];
 
   return (
-    <section
-      id="certifications"
-      className="certifications-section"
-      aria-labelledby="certifications-heading"
-    >
-      <h1 id="certifications-heading">Certifications</h1>
-      <div className="certification-timeline" role="list">
-        {certifications.map((cert, index) => (
-          <div
-            key={cert.id}
-            className={`certification-item ${cert.status}`}
-            role="listitem"
-          >
-            <div className="certification-icon" aria-hidden="true">
-              {cert.icon}
-            </div>
-            <div className="certification-content">
-              <h3>{cert.title}</h3>
-              {cert.credentialId && (
-                <p className="credential-id">
-                  Credential ID: {cert.credentialId}
-                </p>
-              )}
-              <p className="issued-date">
-                {cert.status === "completed" ? "Issued: " : "Status: "}
-                {cert.issueDate}
-              </p>
-              {cert.estimatedCompletion && (
-                <p className="estimated-completion">
-                  Estimated Completion: {cert.estimatedCompletion}
-                </p>
-              )}
-              {cert.credentialUrl && (
-                <a
+    <section id="certifications" className="certifications-section" aria-labelledby="certifications-heading">
+      <h2 id="certifications-heading" className="wallet-heading">Digital Credentials</h2>
+      <p className="wallet-subtitle">Verified cloud engineering certifications.</p>
+      
+      <div className="floating-cards-container">
+        {certifications.map((cert, index) => {
+          // Asymmetrical floating math for exactly 2 cards
+          const baseRotate = index === 0 ? -3 : 4;
+          const baseTranslateY = index === 0 ? 20 : -15;
+
+          return (
+            <div 
+              key={cert.id}
+              className="floating-cert-card"
+              style={{
+                '--base-rotate': `${baseRotate}deg`,
+                '--base-translate-y': `${baseTranslateY}px`,
+                '--accent-color': cert.accent
+              }}
+            >
+              {/* Premium Glassmorphic Card Content */}
+              <div className="pass-header">
+                <div className="pass-issuer">
+                  <span className="pass-icon" style={{ color: cert.accent }}>{cert.icon}</span>
+                  <span className="pass-issuer-text">{cert.issuer}</span>
+                </div>
+                {cert.status === 'completed' && <FaCheckCircle className="pass-verified" />}
+              </div>
+              
+              <div className="pass-body">
+                <h3 className="pass-title">{cert.title}</h3>
+                
+                <div className="pass-metadata">
+                  <div className="pass-meta-item">
+                    <span className="meta-label">Issued</span>
+                    <span className="meta-value">{cert.issueDate}</span>
+                  </div>
+                  <div className="pass-meta-item">
+                    <span className="meta-label">Credential ID</span>
+                    <span className="meta-value id-font">{cert.credentialId.substring(0, 16).toUpperCase()}...</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="pass-footer">
+                <div className="pass-chip"></div> {/* Fake smart-card chip aesthetic */}
+                <a 
                   href={cert.credentialUrl}
-                  className="view-credential"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View ${cert.title} credential`}
+                  className="pass-verify-btn"
                 >
-                  View Credential
+                  Verify <FaExternalLinkAlt className="verify-icon" />
                 </a>
-              )}
-              {cert.status === "in-progress" && (
-                <div
-                  className="progress-indicator"
-                  role="progressbar"
-                  aria-valuenow="60"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  <div className="progress-bar" style={{ width: "60%" }}></div>
-                </div>
-              )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

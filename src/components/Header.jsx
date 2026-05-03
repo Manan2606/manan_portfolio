@@ -1,119 +1,86 @@
 import React, { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { FaSun, FaMoon, FaTerminal, FaUserAlt, FaCode, FaTools, FaEnvelope, FaBriefcase, FaCertificate, FaGraduationCap } from "react-icons/fa";
 import "../css/Header.css";
-import Logo from "../Logo.png";
 
-const SCROLL_OFFSET = 88; // Keep in sync with --header-height in theme.css
+const SCROLL_OFFSET = 120; // Adjusted for floating dock offset
 
 const NAV_LINKS = [
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
+  { id: "about", icon: <FaUserAlt />, label: "About" },
+  { id: "experience", icon: <FaBriefcase />, label: "Experience" },
+  { id: "projects", icon: <FaCode />, label: "Projects" },
+  { id: "education", icon: <FaGraduationCap />, label: "Education" },
+  { id: "skills", icon: <FaTools />, label: "Skills" },
+  { id: "certifications", icon: <FaCertificate />, label: "Certs" },
+  { id: "contact", icon: <FaEnvelope />, label: "Contact" },
 ];
 
-const RESUME_URL =
-  "https://drive.google.com/file/d/1YbcfJ7SlviOGHwPQdEcg8sk5HwKWPahK/view?usp=sharing";
-
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [activeTab, setActiveTab] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 900) {
-        setMenuOpen(false);
-      }
-    };
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  const handleNavClick = () => setMenuOpen(false);
+  const handleCmdClick = () => {
+    window.dispatchEvent(new CustomEvent('openCommandCenter'));
+    setActiveTab("cmd");
+  };
 
   return (
-    <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <div className="header-content">
-        <button
-          className="brand"
-          type="button"
-          onClick={() => {
-            handleNavClick();
-            scroll.scrollToTop({ smooth: true, duration: 500 });
-          }}
-          aria-label="Back to top"
+    <div className="dock-container">
+      <nav className="dock-nav">
+        {/* Command Center Button */}
+        <button 
+          className={`dock-item ${activeTab === 'cmd' ? 'active' : ''}`} 
+          onClick={handleCmdClick}
+          aria-label="Open Command Center"
         >
-          <img src={Logo} alt="Logo" className="logo" />
-          <div className="brand-copy">
-            <span className="brand-title">Manan Shah</span>
-          </div>
+          <div className="dock-icon"><FaTerminal /></div>
+          <span className="dock-tooltip">Cmd+K</span>
         </button>
 
-        <button
-          className={`menu-toggle ${menuOpen ? "open" : ""}`}
-          type="button"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <div className="dock-divider"></div>
 
-        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {NAV_LINKS.map((section) => (
-            <Link
-              key={section.id}
-              to={section.id}
-              smooth={true}
-              duration={500}
-              offset={-SCROLL_OFFSET}
-              spy={true}
-              activeClass="active"
-              className="nav-link"
-              onClick={handleNavClick}
-            >
-              {section.label}
-            </Link>
-          ))}
+        {/* Navigation Links */}
+        {NAV_LINKS.map((section) => (
           <Link
-            to="contact"
+            key={section.id}
+            to={section.id}
             smooth={true}
-            duration={500}
+            duration={150}
             offset={-SCROLL_OFFSET}
             spy={true}
             activeClass="active"
-            className="nav-link nav-link-contact"
-            onClick={handleNavClick}
+            className="dock-item"
+            onSetActive={() => setActiveTab(section.id)}
           >
-            Contact
+            <div className="dock-icon">{section.icon}</div>
+            <span className="dock-tooltip">{section.label}</span>
           </Link>
-          <a
-            className="cta-link"
-            href={RESUME_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleNavClick}
-          >
-            View Resume
-          </a>
-        </nav>
-      </div>
-    </header>
+        ))}
+
+        <div className="dock-divider"></div>
+
+        {/* Theme Toggle */}
+        <button 
+          className="dock-item theme-toggle" 
+          onClick={toggleTheme} 
+          aria-label="Toggle theme"
+        >
+          <div className="dock-icon">
+            {theme === "dark" ? <FaSun /> : <FaMoon />}
+          </div>
+          <span className="dock-tooltip">{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+        </button>
+      </nav>
+    </div>
   );
 };
 

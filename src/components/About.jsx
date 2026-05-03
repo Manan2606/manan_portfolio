@@ -1,53 +1,51 @@
 import React from "react";
 import "../css/About.css";
-import NewPhoto from "../Resume_Profile.jpg";
+import NewPhoto from "../Manan_Headshot.png";
+import { FaAws, FaGoogle, FaRobot } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="about-section modern-about"
-      aria-labelledby="about-heading"
-    >
-      <div className="about-card">
-        <div className="about-photo-container">
+    <section id="about" className="about-section">
+      <div className="executive-card">
+        
+        <div className="executive-photo-wrapper">
           <img
             src={NewPhoto}
-            alt="Manan Shah - Full Stack & AI Engineer"
-            className="about-photo-modern"
+            alt="Manan Shah - Full-Stack Engineer & Cloud AI Consultant"
+            className="executive-photo"
             loading="eager"
             width="320"
             height="320"
           />
         </div>
 
-        <div className="about-info">
-          <div className="about-accent-bar">
-            <h2 id="about-heading" className="about-name-modern">
-              MANAN SHAH
-            </h2>
-            <span className="about-title">Full Stack & AI Engineer</span>
+        <div className="executive-info">
+          <h2 id="about-heading" className="executive-name">
+            MANAN SHAH
+          </h2>
+          <h3 className="executive-title">
+            Full-Stack Engineer & Cloud AI Consultant
+          </h3>
+
+          <div className="executive-text">
+            <p className="executive-hook">
+              Engineer by training, consultant by evolution - I build at the crossroads of full-stack development, AI, and cloud strategy.
+            </p>
+            <p className="executive-description">
+              At Capgemini, I architect intelligent solutions for a Customer Care as a Service platform using <strong>Dialogflow CX</strong>, <strong>BigQuery</strong>, <strong>Spring Boot</strong>, and <strong>Google Cloud</strong>. Beyond client work, I have shipped production systems that cut deployment cycles from days to hours, built <strong>multi-agent AI</strong> applications, and competed in AI Hackathons.
+            </p>
+            <p className="executive-description">
+              Dual AWS-certified, Google Cloud-bound, and equally comfortable in code and the boardroom.
+            </p>
           </div>
 
-          <div className="about-text-modern">
-            <p className="about-description">
-              Full‑stack software and AI engineer specializing in building
-              secure, scalable, and AI‑driven web applications using{" "}
-              <strong>Python, JavaScript, React.js, PHP, FastAPI,</strong> and{" "}
-              <strong>AWS</strong>. Experienced in{" "}
-              <strong>database management</strong> and{" "}
-              <strong>CI/CD pipelines</strong>, with proven success in{" "}
-              <strong>AI Hackathon</strong> projects.
-            </p>
-            <p className="about-description">
-              Certified Cloud Developer with expertise in{" "}
-              <strong>cloud deployment</strong> and{" "}
-              <strong>application development</strong>. Passionate about
-              creating solutions that combine web engineering and AI to drive
-              impactful results.
-            </p>
+          <div className="executive-tags">
+            <span className="static-tag"><FaAws /> AWS Associate Level Certified</span>
+            <span className="static-tag"><FaGoogle /> Google Cloud Bound</span>
+            <span className="static-tag"><FaRobot /> AI Agentic Systems</span>
           </div>
         </div>
+
       </div>
     </section>
   );

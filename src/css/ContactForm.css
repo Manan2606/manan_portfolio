@@ -1,195 +1,197 @@
-/* Contact Section */
-#contact {
+/* Terminal Contact Section */
+.terminal-contact-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 3rem;
-  background-color: color-mix(in srgb, var(--color-accent-50) 60%, var(--color-neutral-0));
+  padding: 6rem 1.5rem 4rem;
   position: relative;
+  z-index: 1;
 }
 
 /* Heading */
-#contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  color: var(--color-neutral-700);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+.terminal-heading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 3.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 15px rgba(0, 204, 255, 0.2);
+  display: inline-block;
   position: relative;
 }
 
-#contact h2::after {
+.terminal-heading::after {
   content: '';
   position: absolute;
-  width: 60%;
-  height: 3px;
-  background-color: var(--color-accent-500);
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary-500);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--color-primary-500);
 }
 
-/* Form Styles */
-.contact-form {
-  background: var(--color-neutral-0);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-soft);
-  max-width: 600px;
+/* Terminal Window */
+.terminal-window {
   width: 100%;
-  box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid var(--color-neutral-300);
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 750px;
+  background: rgba(5, 5, 8, 0.9); /* Deep terminal black */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 204, 255, 0.15);
+  overflow: hidden;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  cursor: text;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--color-accent-500) 12%, var(--color-neutral-900) 20%);
+[data-theme="light"] .terminal-window {
+  background: rgba(20, 20, 25, 0.95); /* Keep it dark even in light mode for the authentic CLI feel */
 }
 
-.contact-form h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-neutral-700);
+.terminal-window:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--color-primary-500);
 }
 
-/* Form Fields */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--color-neutral-300);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.form-group textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.error-message {
-  color: var(--color-danger);
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.form-group input:invalid,
-.form-group textarea:invalid {
-  border-color: var(--color-danger);
-}
-
-/* Button Styles */
-button[type="submit"] {
-  background-color: var(--color-accent-500);
-  color: var(--color-neutral-0);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button[type="submit"]:hover {
-  background-color: var(--color-accent-600);
-}
-
-button[type="submit"]:disabled {
-  background-color: var(--color-neutral-300);
-  cursor: not-allowed;
-}
-
-/* Accessibility focus styles */
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: 2px solid var(--color-accent-500);
-  outline-offset: 2px;
-}
-
-/* Loading state animation */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button[type="submit"][aria-busy="true"] {
+/* Terminal Header */
+.terminal-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  padding-left: 2.5rem;
 }
 
-button[type="submit"][aria-busy="true"]::before {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid var(--color-neutral-0);
-  border-top-color: transparent;
+.terminal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.t-btn {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
 }
 
-/* Responsive Styles */
+.close-btn { background: #ff5f56; }
+.min-btn { background: #ffbd2e; }
+.max-btn { background: #27c93f; }
+
+.terminal-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Terminal Body */
+.terminal-body {
+  padding: 1.5rem;
+  min-height: 350px;
+  max-height: 450px;
+  overflow-y: auto;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+/* Line Types */
+.terminal-line.system {
+  color: #8be9fd; /* Cyan for system */
+}
+
+.terminal-line.prompt {
+  color: #50fa7b; /* Green for prompts */
+  margin-top: 1rem;
+}
+
+.terminal-line.input {
+  color: #f8f8f2; /* White for user input history */
+  opacity: 0.8;
+}
+
+.terminal-line.error {
+  color: #ff5555; /* Red for errors */
+}
+
+.terminal-line.success {
+  color: var(--color-primary-500); /* Neon blue for success */
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+  margin-top: 1rem;
+}
+
+/* Input Line */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.terminal-cursor-prompt {
+  color: #50fa7b;
+  margin-right: 0.8rem;
+  font-weight: bold;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f8f8f2;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  caret-color: #50fa7b; /* The blinking cursor color */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  #contact {
-    padding: 2rem 1rem;
+  .terminal-contact-section {
+    padding: 4rem 1rem 3rem;
   }
-
-  .contact-form {
-    max-width: 100%;
-    padding: 2rem;
-  }
-
-  .contact-form h2 {
-    font-size: 1.6rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 1rem;
+  
+  .terminal-body {
     font-size: 1rem;
+    min-height: 300px;
   }
-
-  .contact-form button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+  
+  .terminal-heading {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .contact-form h2 {
-    font-size: 1.4rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.9rem;
-    font-size: 0.95rem;
-  }
-
-  .contact-form button {
-    padding: 1rem 1.8rem;
-    font-size: 1rem;
+  .terminal-body {
+    font-size: 0.9rem;
+    padding: 1rem;
   }
 }

@@ -1,69 +1,29 @@
-/* Education Section Styles */
+/* Education Section - Neural Knowledge Tree */
 #education {
-  padding: 5rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-neutral-0) 0%,
-    var(--color-neutral-50) 100%
-  );
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
+  padding: 6rem 1.5rem 8rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: var(--color-neutral-700);
-}
-
-#education::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--color-primary-500) 50%,
-    transparent 100%
-  );
-  animation: shimmer 2s infinite;
-}
-
-#education::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--color-primary-500) 50%,
-    transparent 100%
-  );
-  animation: shimmer 2s infinite reverse;
-}
-
-@keyframes shimmer {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
-}
-
-#education h1 {
-  text-align: center;
-  font-size: 3.5rem;
-  color: var(--color-neutral-800);
-  margin-bottom: 3rem;
+  align-items: center;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px color-mix(in srgb, var(--color-primary-500) 15%, var(--color-neutral-900) 15%);
+  z-index: 1;
 }
 
-#education h1::after {
+.neural-heading {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 15px rgba(0, 204, 255, 0.2);
+  display: inline-block;
+  position: relative;
+}
+
+.neural-heading::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -71,306 +31,437 @@
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-600));
+  background: var(--color-primary-500);
   border-radius: 2px;
-  animation: expandWidth 0.6s ease-out forwards;
+  box-shadow: 0 0 10px var(--color-primary-500);
 }
 
-@keyframes expandWidth {
-  from { width: 0; }
-  to { width: 60px; }
+.neural-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 6rem;
 }
 
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  perspective: 2000px;
-  padding: 1rem;
-}
-
-.education-card {
-  background: color-mix(in srgb, var(--color-neutral-0) 95%, transparent);
-  border-radius: 20px;
-  box-shadow: var(--shadow-strong);
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
-  backdrop-filter: blur(10px);
-  border: 1px solid color-mix(in srgb, var(--color-neutral-0) 25%, transparent);
-}
-
-.education-card:nth-child(1) { animation-delay: 0.2s; }
-.education-card:nth-child(2) { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) rotateX(10deg);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
-}
-
-.education-card:hover {
-  transform: translateY(-10px) rotateX(5deg);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-primary-500) 18%, var(--color-neutral-900) 25%);
-}
-
-.education-card-header {
-  background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-neutral-200) 100%);
-  color: var(--color-neutral-700);
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+/* -----------------------------
+   Network Architecture
+   ----------------------------- */
+.neural-network-container {
   position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-neutral-400) 25%, transparent);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-.education-card-header::before {
-  content: '';
+/* Central glowing spine */
+.network-spine {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-    color-mix(in srgb, var(--color-primary-500) 5%, transparent) 0%,
-    transparent 100%
-  );
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1) 10%, rgba(255,255,255,0.1) 90%, transparent);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+[data-theme="light"] .network-spine {
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.1) 90%, transparent);
+}
+
+/* -----------------------------
+   Neural Cluster
+   ----------------------------- */
+.neural-cluster {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align top so core node sits accurately */
+  width: 100%;
+  margin-bottom: 8rem;
+  position: relative;
   z-index: 1;
-  animation: shine 3s infinite;
 }
 
-@keyframes shine {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
+.neural-cluster:last-child {
+  margin-bottom: 2rem;
 }
 
-.institution-icon {
-  background: color-mix(in srgb, var(--color-primary-500) 12%, transparent);
-  width: 60px;
-  height: 60px;
-  border-radius: 15px;
+/* The Core University Node */
+.core-node-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 0; /* Pin to the exact top of the cluster container */
+  transform: translateX(-50%);
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.core-node {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(15, 15, 20, 0.95);
+  border: 2px solid rgba(255,255,255,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
-  z-index: 2;
+}
+
+[data-theme="light"] .core-node {
+  background: #fff;
+  border-color: rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.core-icon {
+  font-size: 2.2rem;
+  color: rgba(255,255,255,0.3);
   transition: all 0.4s ease;
-  color: var(--color-primary-500);
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--color-primary-500) 15%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-primary-500) 25%, transparent);
-}
-
-.education-card:hover .institution-icon {
-  transform: scale(1.1) rotate(5deg);
-  background: color-mix(in srgb, var(--color-primary-500) 18%, transparent);
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary-500) 25%, transparent);
-}
-
-.institution-info {
-  flex: 1;
-  position: relative;
   z-index: 2;
 }
 
-.institution-info h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-primary-500);
-  letter-spacing: 0.5px;
+[data-theme="light"] .core-icon {
+  color: rgba(0,0,0,0.3);
 }
 
-.degree-info {
+/* Hover State - Core Node Activation */
+.core-node-wrapper.active .core-node {
+  border-color: var(--node-color);
+  background: rgba(20,20,25,0.9);
+  box-shadow: 0 0 25px var(--node-color), inset 0 0 15px rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+[data-theme="light"] .core-node-wrapper.active .core-node {
+  background: #fff;
+}
+
+.core-node-wrapper.active .core-icon {
+  color: var(--node-color);
+  filter: drop-shadow(0 0 8px var(--node-color));
+}
+
+/* -----------------------------
+   Mathematical 50% Layout Blocks
+   ----------------------------- */
+/* By forcing the left and right containers to exactly 50% minus padding for the core node, we guarantee perfect spine alignment */
+.cluster-left .data-readout { width: calc(50% - 60px); text-align: right; }
+.cluster-left .synapse-branches { width: calc(50% - 60px); margin-left: auto; }
+
+.cluster-right .synapse-branches { width: calc(50% - 60px); }
+.cluster-right .data-readout { width: calc(50% - 60px); margin-left: auto; text-align: left; }
+
+
+/* -----------------------------
+   Data Readout
+   ----------------------------- */
+.data-readout {
+  padding-top: 5px; /* Align visually with the 80px core node */
+}
+
+.readout-glass {
+  background: rgba(15, 15, 20, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+[data-theme="light"] .readout-glass {
+  background: rgba(255,255,255,0.5);
+  border-color: rgba(0,0,0,0.05);
+}
+
+.neural-cluster:hover .readout-glass {
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] .neural-cluster:hover .readout-glass {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.readout-title {
+  font-family: var(--font-family-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+}
+
+[data-theme="light"] .readout-title { color: #111; }
+
+.readout-degree {
+  font-size: 1rem;
+  color: var(--color-primary-400);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.readout-stats {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.8rem;
-  font-size: 1rem;
-  color: var(--color-neutral-700);
+  gap: 1rem;
 }
 
-.degree-icon {
-  font-size: 1.2rem;
-  transition: all 0.4s ease;
-  color: var(--color-primary-500);
+.cluster-left .readout-stats { justify-content: flex-end; }
+.cluster-right .readout-stats { justify-content: flex-start; }
+
+.duration-text {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
 }
 
-.education-card:hover .degree-icon {
-  transform: translateX(5px) scale(1.1);
+[data-theme="light"] .duration-text { color: rgba(0,0,0,0.5); }
+
+.gpa-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid transparent; /* Set dynamically inline */
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.03);
 }
 
-.education-card-body {
-  padding: 2rem;
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-neutral-0) 95%, transparent) 0%, color-mix(in srgb, var(--color-neutral-50) 95%, transparent) 100%);
-  position: relative;
-}
+[data-theme="light"] .gpa-badge { background: rgba(0,0,0,0.03); }
 
-.education-details {
+/* -----------------------------
+   Synapse Branches (Coursework)
+   ----------------------------- */
+.synapse-branches {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-neutral-400) 20%, transparent);
+  gap: 1.2rem;
+  position: relative;
+  /* The vertical bracket line */
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 35px; /* Distance from bracket to pills */
+  padding-top: 35px; /* Pushes pills down so top one doesn't hit the core node */
+  padding-bottom: 20px;
+  transition: border-color 0.4s ease;
 }
 
-.detail-item {
+[data-theme="light"] .synapse-branches { border-color: rgba(0,0,0,0.1); }
+
+.cluster-right .synapse-branches {
+  border-left: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  padding-left: 0;
+  padding-right: 35px;
+  align-items: flex-end;
+}
+
+[data-theme="light"] .cluster-right .synapse-branches { border-color: rgba(0,0,0,0.1); }
+
+/* The horizontal stem connecting Core to Vertical Bracket */
+.synapse-branches::before {
+  content: '';
+  position: absolute;
+  top: 40px; /* Dead center of the 80px core node */
+  left: -25px; /* Reaches from the border towards the Core Node */
+  width: 25px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.4s ease;
+}
+
+[data-theme="light"] .synapse-branches::before { background: rgba(0,0,0,0.1); }
+
+.cluster-right .synapse-branches::before {
+  left: auto;
+  right: -25px;
+}
+
+/* Horizontal lines connecting Vertical Bracket to Course Pills */
+.branch-path {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: var(--color-neutral-700);
-  transition: all 0.4s ease;
-  padding: 0.5rem;
-  border-radius: 8px;
 }
 
-.detail-item:hover {
-  transform: translateX(8px);
-  background: color-mix(in srgb, var(--color-primary-500) 8%, transparent);
-}
-
-.detail-icon {
-  color: var(--color-primary-500);
-  font-size: 1.2rem;
-  transition: all 0.4s ease;
-}
-
-.detail-item:hover .detail-icon {
-  transform: scale(1.2) rotate(10deg);
-}
-
-.coursework-section h4 {
-  color: var(--color-neutral-700);
-  margin: 0 0 1.5rem 0;
-  font-size: 1.2rem;
-  position: relative;
-  display: inline-block;
-  font-weight: 600;
-}
-
-.coursework-section h4::after {
+.branch-path::before {
   content: '';
   position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary-500), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.coursework-section:hover h4::after {
-  transform: scaleX(1);
-}
-
-.coursework-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.course-item {
-  background: color-mix(in srgb, var(--color-neutral-50) 80%, transparent);
-  padding: 1rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  color: var(--color-neutral-700);
-  text-align: center;
+  top: 50%;
+  left: -35px; /* Reaches exactly from vertical border to the pill */
+  width: 35px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-neutral-400) 15%, transparent);
+  transition-delay: calc(var(--branch-index) * 0.05s);
+}
+
+[data-theme="light"] .branch-path::before { background: rgba(0,0,0,0.1); }
+
+.cluster-right .branch-path::before {
+  left: auto;
+  right: -35px;
+}
+
+/* Course Node Pills */
+.course-node {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(15,15,20,0.4);
   backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: calc(var(--branch-index) * 0.05s);
 }
 
-.course-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg,
-    color-mix(in srgb, var(--color-primary-500) 10%, transparent) 0%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
+[data-theme="light"] .course-node {
+  background: rgba(255,255,255,0.4);
+  border-color: rgba(0,0,0,0.05);
+  color: rgba(0,0,0,0.6);
 }
 
-.course-item:hover {
-  background: color-mix(in srgb, var(--color-neutral-200) 90%, transparent);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--color-primary-500) 12%, var(--color-neutral-900) 15%);
+.cluster-right .course-node {
+  flex-direction: row-reverse;
 }
 
-.course-item:hover::before {
-  opacity: 1;
+.course-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.4s ease;
+  transition-delay: calc(var(--branch-index) * 0.05s);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .education-grid {
-    grid-template-columns: 1fr;
-    padding: 0.5rem;
-  }
+[data-theme="light"] .course-dot { background: rgba(0,0,0,0.1); }
 
-  .education-card {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .coursework-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
-  #education h1 {
-    font-size: 2.5rem;
-  }
+/* -----------------------------
+   Pulse Hover Animations
+   ----------------------------- */
+.synapse-branches.pulsing {
+  border-color: var(--node-color);
+  box-shadow: -3px 0 10px -3px var(--node-color);
+}
+.cluster-right .synapse-branches.pulsing {
+  box-shadow: 3px 0 10px -3px var(--node-color);
 }
 
-@media (max-width: 480px) {
-  #education {
-    padding: 3rem 1rem;
+.synapse-branches.pulsing::before,
+.synapse-branches.pulsing .branch-path::before {
+  background: var(--node-color);
+  box-shadow: 0 0 8px var(--node-color);
+}
+
+.synapse-branches.pulsing .course-node {
+  border-color: var(--node-color);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] .synapse-branches.pulsing .course-node {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cluster-right .synapse-branches.pulsing .course-node {
+  transform: translateX(-8px);
+}
+
+.synapse-branches.pulsing .course-dot {
+  background: var(--node-color);
+  box-shadow: 0 0 8px var(--node-color);
+  transform: scale(1.5);
+}
+
+/* -----------------------------
+   Responsive Design
+   ----------------------------- */
+@media (max-width: 900px) {
+  /* Stack it on mobile */
+  .neural-cluster {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 50px; /* Space for spine on left */
+    gap: 2rem;
+  }
+  
+  .network-spine {
+    left: 25px; /* Spine moves to the left edge */
+  }
+  
+  .core-node-wrapper {
+    left: 25px; /* Pin core node to spine */
+    top: 0;
+  }
+  
+  /* Reset Readout */
+  .cluster-left .data-readout,
+  .cluster-right .data-readout {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding-top: 100px; /* Push below the 80px core node */
+  }
+  
+  .cluster-left .readout-stats,
+  .cluster-right .readout-stats {
+    justify-content: flex-start;
+  }
+  
+  /* Reset Branches */
+  .cluster-left .synapse-branches,
+  .cluster-right .synapse-branches {
+    width: 100%;
+    margin: 0;
+    align-items: flex-start;
+    border-right: none;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+  
+  [data-theme="light"] .cluster-left .synapse-branches,
+  [data-theme="light"] .cluster-right .synapse-branches {
+    border-left-color: rgba(0,0,0,0.1);
   }
 
-  #education h1 {
-    font-size: 2rem;
+  .cluster-right .synapse-branches::before {
+    left: -25px;
+    right: auto;
   }
-
-  .education-card-header {
-    padding: 1.5rem;
+  
+  .cluster-right .branch-path::before {
+    left: -35px;
+    right: auto;
   }
-
-  .institution-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.4rem;
+  
+  .cluster-right .course-node {
+    flex-direction: row; /* Icon on left */
   }
-
-  .institution-info h3 {
-    font-size: 1.2rem;
+  
+  /* Reset Hover Animations */
+  .synapse-branches.pulsing,
+  .cluster-right .synapse-branches.pulsing {
+    box-shadow: -3px 0 10px -3px var(--node-color);
   }
-
-  .coursework-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .education-card-body {
-    padding: 1.5rem;
+  
+  .synapse-branches.pulsing .course-node,
+  .cluster-right .synapse-branches.pulsing .course-node {
+    transform: translateX(8px);
   }
 }

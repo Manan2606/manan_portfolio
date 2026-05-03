@@ -1,131 +1,181 @@
-/* Skills Section */
+/* Skills Section - Holographic Cards */
 #skills {
-  padding: 4rem 2rem;
+  padding: 6rem 1.5rem 4rem;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-neutral-50) 0%, color-mix(in srgb, var(--color-accent-50) 60%, var(--color-neutral-0)) 100%);
-  border-radius: 20px;
-  box-shadow: var(--shadow-strong);
-  max-width: 1200px;
-  margin: 2rem auto;
+  position: relative;
+  z-index: 1;
 }
 
 #skills h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-  color: var(--color-primary-500);
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  position: relative;
-}
-
-/* Skills Category */
-.skills-category {
-  margin-bottom: 3.2rem;
-}
-
-.skills-category-title {
-  font-size: 1.6rem;
-  color: var(--color-accent-500);
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 1px;
-  position: relative;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 15px rgba(0, 204, 255, 0.2);
   display: inline-block;
+  position: relative;
 }
 
-.skills-category-title::after {
+.holo-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+#skills h2::after {
   content: '';
-  display: block;
-  width: 48px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-highlight));
+  background: var(--color-primary-500);
   border-radius: 2px;
-  margin: 0.7rem auto 0 auto;
+  box-shadow: 0 0 10px var(--color-primary-500);
 }
 
-/* Skills List */
-.skills-list {
+/* -----------------------------
+   Holographic Grid
+   ----------------------------- */
+.holo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* We need perspective on the wrapper so the child can rotate in 3D */
+.holo-card-wrapper {
+  perspective: 1200px;
+}
+
+/* The actual rotating card */
+.holo-card {
+  position: relative;
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-xl);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.05);
+  /* The core 3D properties */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+[data-theme="light"] .holo-card {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(255,255,255,0.5);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* The Glare Layer */
+.holo-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* Keeps the glare perfectly inside the rounded card */
+  pointer-events: none;
+  z-index: 10;
+  /* mix-blend-mode looks amazing for holographic lighting */
+  mix-blend-mode: color-dodge;
+}
+
+[data-theme="light"] .holo-glare {
+  mix-blend-mode: normal; /* color-dodge is too blown out on white backgrounds */
+}
+
+/* -----------------------------
+   3D Content Layers
+   ----------------------------- */
+/* This pops the title out from the background */
+.holo-title {
+  transform: translateZ(50px);
+  font-family: var(--font-family-heading);
+  font-size: 1.6rem;
+  color: var(--color-primary-400);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  pointer-events: none; /* Let mouse pass through to card */
+}
+
+/* This pops the skills out even further! */
+.holo-skills-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  transform: translateZ(80px);
+  pointer-events: none; 
 }
 
-.skill-item {
+.holo-skill {
   display: flex;
   align-items: center;
-  padding: 1.1rem 1.7rem;
-  border-radius: 18px;
-  background: color-mix(in srgb, var(--color-neutral-0) 75%, transparent);
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--color-primary-500) 12%, var(--color-neutral-900) 12%);
-  border: 1.5px solid color-mix(in srgb, var(--color-primary-500) 15%, transparent);
-  cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s, border 0.35s, background 0.35s;
-  min-width: 180px;
-  max-width: 240px;
-  margin-bottom: 0.5rem;
-  position: relative;
-  backdrop-filter: blur(6px);
+  gap: 0.8rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--body-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  pointer-events: auto; /* Re-enable for hovering */
 }
 
-.skill-item:hover, .skill-item:focus {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
-  border: 1.5px solid var(--color-primary-500);
-  background: color-mix(in srgb, var(--color-neutral-0) 95%, transparent);
-  outline: none;
+[data-theme="light"] .holo-skill {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-.skill-icon {
-  font-size: 2.2rem;
-  margin-right: 1rem;
-  color: var(--skill-bg-color, var(--color-primary-500));
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), color 0.4s;
+.holo-skill:hover {
+  background: rgba(0,0,0,0.2);
+  border-color: var(--skill-color);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 15px var(--skill-color);
 }
 
-.skill-item:hover .skill-icon, .skill-item:focus .skill-icon {
-  transform: rotate(-8deg) scale(1.18);
-  color: var(--color-primary-500);
+.holo-icon {
+  font-size: 1.2rem;
+  color: var(--skill-color);
+  filter: drop-shadow(0 0 5px var(--skill-color));
 }
 
-.skill-name {
-  font-size: 1.18rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  color: var(--color-neutral-700);
-  text-shadow: 0 1px 4px color-mix(in srgb, var(--color-primary-500) 12%, transparent);
+.holo-name {
+  font-size: 0.95rem;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 900px) {
-  #skills {
-    padding: 2.5rem 0.5rem;
-    border-radius: 12px;
-  }
-  .skills-list {
-    gap: 1rem;
-  }
-  .skill-item {
-    min-width: 140px;
-    max-width: 200px;
-    padding: 0.9rem 1.2rem;
+  .holo-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 600px;
   }
 }
 
-@media (max-width: 600px) {
-  .skill-item {
-    min-width: 100px;
-    max-width: 100%;
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
+@media (max-width: 768px) {
+  .holo-card {
+    padding: 2rem 1.5rem;
   }
-  .skill-icon {
-    font-size: 1.5rem;
-    margin-right: 0.6rem;
+  .holo-title {
+    transform: translateZ(30px);
   }
-  .skill-name {
-    font-size: 1rem;
+  .holo-skills-grid {
+    transform: translateZ(50px);
   }
 }
