@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Education from "./components/Education";
@@ -27,6 +28,7 @@ function App() {
       <Footer />
       <AIChat />
       <CommandCenter />
+      <Analytics />
     </div>
   );
 }
