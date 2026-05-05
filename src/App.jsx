@@ -11,6 +11,7 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import AIChat from "./components/AIChat";
 import CommandCenter from "./components/CommandCenter";
+import ResumeModal from "./components/ResumeModal";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Footer />
       <AIChat />
       <CommandCenter />
+      <ResumeModal />
       <Analytics />
     </div>
   );

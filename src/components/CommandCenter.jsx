@@ -67,7 +67,15 @@ const CommandCenter = () => {
   };
 
   const ACTIONS = [
-    { id: 'resume', title: 'View Resume', icon: <FaFilePdf />, action: () => window.open('https://drive.google.com/file/d/1YbcfJ7SlviOGHwPQdEcg8sk5HwKWPahK/view?usp=sharing', '_blank') },
+    { 
+      id: 'resume', 
+      title: 'View Resume', 
+      icon: <FaFilePdf />, 
+      action: () => {
+        setIsOpen(false);
+        window.dispatchEvent(new CustomEvent('openResume'));
+      } 
+    },
     { id: 'theme', title: 'Toggle Theme', icon: <FaMoon />, action: toggleTheme },
     { id: 'chat', title: 'Open AI Assistant', icon: <FaRobot />, action: openChat },
     { id: 'email', title: 'Copy Email', icon: <FaEnvelope />, action: copyEmail },

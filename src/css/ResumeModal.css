@@ -1,0 +1,171 @@
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+[data-theme="light"] .resume-modal-overlay {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.resume-modal-content {
+  width: 100%;
+  max-width: 1000px;
+  height: 90vh;
+  background: rgba(15, 15, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+[data-theme="light"] .resume-modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.resume-modal-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .resume-modal-header {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.resume-modal-title {
+  font-family: var(--font-family-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary-400);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="light"] .resume-modal-title {
+  color: var(--color-primary-600);
+}
+
+.resume-modal-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.resume-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 204, 255, 0.1);
+  color: var(--color-primary-400);
+  border: 1px solid rgba(0, 204, 255, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.resume-download-btn:hover {
+  background: rgba(0, 204, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .resume-download-btn {
+  color: var(--color-primary-600);
+  background: rgba(0, 204, 255, 0.05);
+  border-color: rgba(0, 204, 255, 0.2);
+}
+
+.resume-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.resume-close-btn:hover {
+  color: #ff5f56;
+  background: rgba(255, 95, 86, 0.1);
+}
+
+[data-theme="light"] .resume-close-btn {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.resume-modal-body {
+  flex: 1;
+  width: 100%;
+  background: #2a2a2a; /* Neutral dark background behind PDF */
+}
+
+.resume-pdf-viewer {
+  display: block; /* removes bottom margin space */
+  border-radius: 0 0 16px 16px;
+}
+
+.resume-fallback {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  color: white;
+}
+
+.fallback-btn {
+  background: var(--color-primary-500);
+  color: #0f0f14 !important;
+}
+
+/* Animations */
+.animate-pop-in {
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .resume-modal-overlay {
+    padding: 0; /* Full screen on mobile */
+  }
+  .resume-modal-content {
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+  .resume-download-btn span {
+    display: none; /* Hide 'Download' text on mobile, just keep icon */
+  }
+}
