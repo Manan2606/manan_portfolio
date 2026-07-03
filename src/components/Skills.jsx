@@ -1,143 +1,184 @@
-import React, { useRef, useState } from "react";
-import {
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaVuejs, FaLaravel, FaGitAlt, FaAws,
-  FaDocker, FaJava, FaLeaf, FaRobot, FaCloud, FaChartLine, FaCommentDots, FaPython
+﻿import {
+  FaAws,
+  FaBrain,
+  FaChartBar,
+  FaChartLine,
+  FaCloud,
+  FaCode,
+  FaCommentDots,
+  FaCogs,
+  FaDatabase,
+  FaDocker,
+  FaGitAlt,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaLeaf,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+  FaRobot,
+  FaSearch,
+  FaServer,
+  FaTasks,
+  FaTools,
+  FaVuejs,
+  FaVial,
 } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
 import "../css/skills.css";
 
-const HolographicCard = ({ category }) => {
-  const cardRef = useRef(null);
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+const categories = [
+  {
+    title: "Languages",
+    summary: "Core programming languages used across backend, frontend, data, and systems coursework.",
+    accent: "#7c3aed",
+    skills: [
+      { name: "Python", icon: <FaPython /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "TypeScript", icon: <FaCode /> },
+      { name: "SQL", icon: <FaDatabase /> },
+      { name: "C++", icon: <FaCode /> },
+      { name: "PHP", icon: <FaCode /> },
+    ],
+  },
+  {
+    title: "Frontend & Backend",
+    summary: "Application frameworks, API design, service architecture, and production web delivery.",
+    accent: "#00ccff",
+    skills: [
+      { name: "React.js", icon: <FaReact /> },
+      { name: "Next.js", icon: <FaCode /> },
+      { name: "Vue.js", icon: <FaVuejs /> },
+      { name: "FastAPI", icon: <FaServer /> },
+      { name: "Spring Boot", icon: <FaLeaf /> },
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "REST APIs", icon: <FaCogs /> },
+      { name: "Microservices", icon: <FaServer /> },
+      { name: "SQLAlchemy", icon: <FaDatabase /> },
+      { name: "HTML5 / CSS3", icon: <FaHtml5 /> },
+    ],
+  },
+  {
+    title: "Databases & Analytics",
+    summary: "Relational, document, embedded, and warehouse systems used in product and cloud workflows.",
+    accent: "#22c55e",
+    skills: [
+      { name: "PostgreSQL", icon: <FaDatabase /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "SQLite", icon: <FaDatabase /> },
+      { name: "BigQuery", icon: <FaChartBar /> },
+      { name: "SQL Optimization", icon: <FaSearch /> },
+      { name: "Data Validation", icon: <FaVial /> },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    summary: "Certified cloud platforms, deployment workflows, infrastructure, and observability tools.",
+    accent: "#f59e0b",
+    skills: [
+      { name: "GCP", icon: <FaCloud /> },
+      { name: "Dialogflow CX", icon: <FaCommentDots /> },
+      { name: "GECX - Learning", icon: <FaRobot /> },
+      { name: "Cloud Run", icon: <FaCloud /> },
+      { name: "Cloud Logging", icon: <FaChartLine /> },
+      { name: "AWS", icon: <FaAws /> },
+      { name: "EC2", icon: <FaAws /> },
+      { name: "S3", icon: <FaAws /> },
+      { name: "RDS", icon: <FaAws /> },
+      { name: "Lambda", icon: <FaAws /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "GitHub Actions", icon: <FaGitAlt /> },
+      { name: "Git", icon: <FaGitAlt /> },
+    ],
+  },
+  {
+    title: "AI & Data Systems",
+    summary: "Applied AI workflows from retrieval pipelines to LLM integration and data processing fundamentals.",
+    accent: "#a855f7",
+    skills: [
+      { name: "RAG", icon: <FaRobot /> },
+      { name: "FAISS", icon: <FaSearch /> },
+      { name: "Cohere LLM", icon: <FaBrain /> },
+      { name: "Machine Learning", icon: <FaBrain /> },
+      { name: "TensorFlow", icon: <FaBrain /> },
+      { name: "ETL / ELT", icon: <FaCogs /> },
+      { name: "Looker", icon: <FaChartLine /> },
+    ],
+  },
+  {
+    title: "Engineering Tools",
+    summary: "Collaboration, testing, documentation, API validation, and delivery tools used on real teams.",
+    accent: "#ef4444",
+    skills: [
+      { name: "JIRA", icon: <FaTasks /> },
+      { name: "Postman", icon: <FaTools /> },
+      { name: "pytest", icon: <FaVial /> },
+      { name: "Cursor", icon: <FaCode /> },
+      { name: "Visio", icon: <FaChartLine /> },
+      { name: "Confluence", icon: <FaTools /> },
+    ],
+  },
+];
 
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    
-    const rect = cardRef.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    
-    // Mouse position relative to card
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    // Calculate rotation (-15deg to 15deg)
-    // If mouse is at left (0), rotateY = -15
-    // If mouse is at right (width), rotateY = 15
-    const rotateY = ((mouseX / width) * 2 - 1) * 15;
-    
-    // If mouse is at top (0), rotateX = 15 (tilts backward)
-    // If mouse is at bottom (height), rotateX = -15 (tilts forward)
-    const rotateX = ((mouseY / height) * -2 + 1) * 15;
-    
-    setRotate({ x: rotateX, y: rotateY });
-    
-    // Calculate glare position
-    setGlare({
-      x: (mouseX / width) * 100,
-      y: (mouseY / height) * 100,
-      opacity: 1
-    });
-  };
+const featuredStats = [
+  { value: "6", label: "Skill Domains" },
+  { value: "50", label: "Resume Skills Covered" },
+  { value: "3", label: "Cloud Certifications" },
+];
 
-  const handleMouseLeave = () => {
-    // Reset back to flat
-    setRotate({ x: 0, y: 0 });
-    setGlare({ ...glare, opacity: 0 });
-  };
-
+const Skills = () => {
   return (
-    <div className="holo-card-wrapper">
-      <div 
-        ref={cardRef}
-        className="holo-card"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-          transition: rotate.x === 0 && rotate.y === 0 ? "transform 0.5s ease" : "none"
-        }}
-      >
-        {/* The Holographic Glare Layer */}
-        <div 
-          className="holo-glare" 
-          style={{
-            background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.15) 0%, transparent 60%)`,
-            opacity: glare.opacity,
-            transition: glare.opacity === 0 ? "opacity 0.5s ease" : "none"
-          }}
-        />
-        
-        {/* 3D Pop-out Content */}
-        <h3 className="holo-title">{category.title}</h3>
-        <div className="holo-skills-grid">
-          {category.skills.map((skill, idx) => (
-            <div key={idx} className="holo-skill" style={{ '--skill-color': skill.color }}>
-              <span className="holo-icon">{skill.icon}</span>
-              <span className="holo-name">{skill.name}</span>
+    <section id="skills" aria-labelledby="skills-heading">
+      <div className="skills-shell">
+        <div className="skills-heading-block">
+          <span className="skills-eyebrow">Capability Map</span>
+          <h2 id="skills-heading">Tech Stack</h2>
+          <p className="skills-subtitle">
+            Core technologies used across production engineering, cloud platforms, AI workflows, backend systems, and team delivery.
+          </p>
+        </div>
+
+        <div className="skills-stats" aria-label="Technology stack summary">
+          {featuredStats.map((stat) => (
+            <div className="skills-stat" key={stat.label}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
-};
 
-const Skills = () => {
-  const CATEGORIES = [
-    {
-      title: "Cloud & AI Engineering",
-      skills: [
-        { name: "Google Cloud", icon: <FaCloud />, color: "#4285F4" },
-        { name: "Vertex AI", icon: <FaRobot />, color: "#4285F4" },
-        { name: "Dialogflow CX", icon: <FaCommentDots />, color: "#FF9800" },
-        { name: "AWS", icon: <FaAws />, color: "#FF9900" },
-        { name: "Cloud Logging", icon: <FaChartLine />, color: "#34A853" },
-      ]
-    },
-    {
-      title: "Backend Architecture",
-      skills: [
-        { name: "Java", icon: <FaJava />, color: "#007396" },
-        { name: "Spring Boot", icon: <FaLeaf />, color: "#6DB33F" },
-        { name: "Python", icon: <FaPython />, color: "#306998" },
-        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
-        { name: "PHP / Laravel", icon: <FaLaravel />, color: "#FF2D20" },
-      ]
-    },
-    {
-      title: "Frontend Systems",
-      skills: [
-        { name: "React.js", icon: <FaReact />, color: "#61dafb" },
-        { name: "JavaScript", icon: <FaJs />, color: "#f7df1e" },
-        { name: "Vue.js", icon: <FaVuejs />, color: "#4fc08d" },
-        { name: "HTML5 / CSS3", icon: <FaHtml5 />, color: "#e34f26" },
-      ]
-    },
-    {
-      title: "Databases & DevOps",
-      skills: [
-        { name: "MySQL", icon: <SiMysql />, color: "#4479A1" },
-        { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
-        { name: "Docker", icon: <FaDocker />, color: "#2496ed" },
-        { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
-      ]
-    }
-  ];
+        <div className="skills-grid">
+          {categories.map((category) => (
+            <article className="skill-category-card" key={category.title} style={{ '--category-accent': category.accent }}>
+              <div className="skill-card-header">
+                <div>
+                  <h3>{category.title}</h3>
+                  <p>{category.summary}</p>
+                </div>
+                <span className="skill-count">{category.skills.length}</span>
+              </div>
 
-  return (
-    <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Tech Stack</h2>
-      <p className="holo-subtitle">Hover over the cards to experience holographic 3D tracking.</p>
-      
-      <div className="holo-grid">
-        {CATEGORIES.map((category, index) => (
-          <HolographicCard key={index} category={category} />
-        ))}
+              <div className="skill-chip-grid">
+                {category.skills.map((skill) => (
+                  <span className="skill-chip" key={skill.name}>
+                    <span className="skill-chip-icon">{skill.icon}</span>
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 export default Skills;
+
+
+
+

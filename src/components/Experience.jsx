@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { FaCalendarAlt, FaBuilding, FaBullseye, FaStar, FaChevronDown } from "react-icons/fa";
 import "../css/Experience.css";
 
 const Experience = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Capgemini is active by default
+  const [activeIndex, setActiveIndex] = useState(0);
   const [scrollStates, setScrollStates] = useState({});
 
   const handleScroll = (index, e) => {
-    // If scrolled down more than 10px, hide the arrow
     const isScrolled = e.target.scrollTop > 10;
     setScrollStates((prev) => ({ ...prev, [index]: isScrolled }));
   };
@@ -19,62 +18,62 @@ const Experience = () => {
   const experiences = [
     {
       id: 0,
-      title: "Associate Application Consultant",
+      title: "Application Consultant / Software Engineer",
       company: "Capgemini",
-      duration: "Feb 2026 – Present",
+      duration: "Feb 2026 - Present",
       isCurrent: true,
       description: [
-        "Architecting and delivering cloud and AI-driven solutions for an enterprise client, leveraging Dialogflow CX, Spring Boot, BigQuery, Cloud Logging, and MongoDB to build intelligent, scalable systems.",
-        "Driving end-to-end technical ownership across cloud infrastructure and AI integrations, while actively pursuing Google Associate Cloud Engineer certification to deepen platform expertise.",
-        "Evolved beyond engineering into a consulting role by leading cross-functional team collaborations, owning client-facing presentations, and translating complex technical solutions into clear business outcomes.",
+        "Delivered Dialogflow CX enhancements and production defect fixes for an enterprise CCaaS platform, tracing parameter lifecycles across 10+ pages and routes.",
+        "Investigated call routing across Dialogflow CX, webhooks, API/database calls, and cloud logs; contributed optimizations that reduced average call latency by about 3 seconds per call.",
+        "Supported backend, observability, and release validation using Python, Cloud Run, Cloud Logging, BigQuery, Looker, Confluence, and Visio process maps.",
       ],
-      impact: "Building the invisible backbone that makes every customer conversation smarter, faster, and more human.",
-      technologies: ["Dialogflow CX", "Spring Boot", "BigQuery", "Cloud Logging", "MongoDB", "GCP"],
+      impact: "Improved routing accuracy, reduced latency, and strengthened release validation for enterprise customer-care workflows.",
+      technologies: ["Dialogflow CX", "Python", "Cloud Run", "BigQuery", "Cloud Logging", "Looker"],
     },
     {
       id: 1,
       title: "SOFTWARE ENGINEER",
       company: "H2 Techno World",
-      duration: "Sep 2024 – May 2025",
+      duration: "Sep 2024 - May 2025",
       description: [
-        "Designed and deployed a production-grade full-stack inventory and order management platform for SMBs using React.js, FastAPI, and MySQL - featuring multi-level role-based access and a responsive UI that consolidated manual audits by 30%, enabling predictive decision-making for supply chain operations.",
-        "Architected containerized microservices with Docker and engineered programmatically triggered CI/CD pipelines via GitHub Actions, streamlining deployments and ensuring consistent, reliable delivery across environments",
-        "Deployed highly available, scalable services on AWS EC2 with minimal downtime, supporting smooth version rollouts and production-grade reliability for end users."
+        "Designed and developed a full-stack inventory and order management platform with React.js, FastAPI, and PostgreSQL across product, inventory, order, access, and audit/reporting modules.",
+        "Built RESTful backend services with normalized PostgreSQL schemas across 8 core entities and implemented audit/validation workflows for 4 event categories.",
+        "Automated Docker-based deployments through GitHub Actions and AWS EC2, reducing release execution from 7 manual tasks to a 3-stage workflow."
       ],
-      impact: "Delivered scalable and automated cloud solutions for inventory management.",
-      technologies: ["React.js", "FastAPI", "MySQL", "Docker", "AWS", "GitHub Actions"],
+      impact: "Reduced release friction while improving operational visibility for inventory and order workflows.",
+      technologies: ["React.js", "FastAPI", "PostgreSQL", "Docker", "AWS EC2", "GitHub Actions"],
     },
     {
       id: 2,
       title: "SOFTWARE ENGINEER",
       company: "H2 Techno World",
-      duration: "Jul 2023 – Sep 2023",
+      duration: "Jul 2023 - Sep 2023",
       description: [
         "Designed and implemented a comprehensive tax invoice system with itemized invoice generation.",
         "Enabled reprinting of invoices for specific time periods, enhancing user accessibility. Integrated secure user authentication, including login/logout functionality.",
-        "Developed an automated email notification system using JavaScript and PHP to send invoices to submitted email IDs, reducing manual handling by 25%"
+        "Developed an automated email notification system using JavaScript and PHP to send invoices to submitted email IDs, reducing manual handling by 25%."
       ],
-      impact: "Enhanced usability and security.",
+      impact: "Enhanced usability and security for invoice workflows.",
       technologies: ["PHP", "JavaScript", "MySQL"],
     },
     {
       id: 3,
-      title: "SOFTWARE DEVELOPER",
+      title: "FULL-STACK DEVELOPER INTERN",
       company: "Crown Software",
-      duration: "Dec 2022 – May 2023",
+      duration: "Dec 2022 - May 2023",
       description: [
-        "Led optimization of SQL databases and API operations for MDHostel, reducing query times by 40%.",
-        "Built responsive, user-friendly webpages, increasing user engagement by 30%.",
-        "Developed core modules like Attendance, Complaint, Fees, Food, and Leave, streamlining hostel operations for 500+ residents.",
+        "Developed and enhanced 7 MDHostel platform modules covering leave requests, complaints, guest management, attendance, food services, room allocation, and meal workflows.",
+        "Led SQL-focused backend work after 3 months by debugging and optimizing PHP-integrated database queries across student management workflows.",
+        "Contributed through daily Agile standups, GitHub-based version control, and collaborative feature development.",
       ],
-      impact: "Improved database efficiency and user engagement.",
-      technologies: ["PHP", "JavaScript", "AJAX", "SQL"],
+      impact: "Improved hostel operations across resident, staff, and administration workflows.",
+      technologies: ["PHP", "JavaScript", "AJAX", "Bootstrap", "SQL"],
     },
     {
       id: 4,
       title: "WEB DEVELOPER",
       company: "NAVPAD INFOTECH",
-      duration: "May 2022 – Jul 2022",
+      duration: "May 2022 - Jul 2022",
       description: [
         "Developed a single-page hospital web app using Vue.js and Laravel, reducing manual data entry by 30%.",
         "Used MySQL to manage patient and staff information, schedule appointments, and generate bills.",
@@ -87,8 +86,8 @@ const Experience = () => {
       id: 5,
       title: "FRONTEND DEVELOPER",
       company: "Sannibh Technology",
-      duration: "May 2021 – Jul 2021",
-      hideScroll: true, // Explicitly hide scroll for this short card
+      duration: "May 2021 - Jul 2021",
+      hideScroll: true,
       description: [
         "Created a responsive consulting website using HTML, CSS, and JavaScript, boosting user engagement.",
         "Integrated service pages for consulting, improving user navigation and experience.",
@@ -102,21 +101,20 @@ const Experience = () => {
   return (
     <section id="experience" className="experience-section" aria-labelledby="experience-heading">
       <h2 id="experience-heading" className="exp-main-heading">Professional Journey</h2>
-      <p className="exp-subtitle">Hover to expand roles and reveal engineering impact.</p>
+      <p className="exp-subtitle">Select a role to review measurable engineering impact.</p>
 
       <div className="accordion-container">
         {experiences.map((exp, index) => {
           const isActive = activeIndex === index;
           return (
-            <div 
-              key={exp.id} 
+            <div
+              key={exp.id}
               className={`accordion-slice ${isActive ? 'active' : ''} ${exp.isCurrent ? 'current-role' : ''}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onFocus={() => handleMouseEnter(index)}
               tabIndex={0}
               aria-expanded={isActive}
             >
-              {/* Vertical Title for compressed state */}
               <div className="slice-vertical-title">
                 <span className="vertical-company">
                   {exp.company}
@@ -124,7 +122,6 @@ const Experience = () => {
                 </span>
               </div>
 
-              {/* Full Content for expanded state */}
               <div className="slice-content-wrapper">
                 <div className="slice-content">
                   <div className="slice-header">
@@ -149,7 +146,7 @@ const Experience = () => {
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
-                    
+
                     <div className="slice-impact">
                       <FaBullseye className="impact-icon" />
                       <p><strong>Impact:</strong> {exp.impact}</p>
@@ -162,7 +159,6 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  {/* Scroll Indicator Arrow */}
                   {!exp.hideScroll && (
                     <div className={`scroll-indicator ${scrollStates[index] ? 'hidden' : ''}`}>
                       <span className="scroll-text">Scroll</span>

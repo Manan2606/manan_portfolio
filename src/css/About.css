@@ -194,3 +194,103 @@
     font-size: 1.15rem;
   }
 }
+/* Recruiter-first CTAs */
+.executive-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.executive-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--body-color);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.executive-action.primary {
+  background: var(--color-primary-500);
+  color: #050505;
+  border-color: var(--color-primary-500);
+}
+
+.executive-action:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-500);
+}
+
+/* Recruiter proof row */
+.executive-proof-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0.5rem 0 1.7rem;
+}
+
+.executive-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.085);
+}
+
+[data-theme="light"] .executive-proof-item {
+  background: rgba(0, 0, 0, 0.035);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+.proof-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: var(--color-primary-500);
+  font-size: 1rem;
+}
+
+.executive-proof-item span:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.executive-proof-item strong {
+  color: var(--body-color);
+  font-size: 0.78rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.executive-proof-item small {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  margin-top: 0.18rem;
+}
+
+@media (max-width: 1100px) {
+  .executive-proof-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .executive-proof-row {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .executive-proof-item {
+    justify-content: flex-start;
+  }
+}

@@ -1,210 +1,118 @@
-import React, { useState, useEffect, useRef } from "react";
+﻿import React from "react";
+import { FaGithub, FaProjectDiagram, FaServer } from "react-icons/fa";
 import "../css/Projects.css";
 
-const Projects = () => {
-  const [activeProject, setActiveProject] = useState(9); // Initial active project is Conversational AI (ID: 9)
-  const titleRefs = useRef([]);
-
-  const projects = [
-    {
-      id: 9,
-      title: "Conversational AI System",
-      description: [
-        "Built a full-stack conversational AI system with agentic capabilities combining Retrieval-Augmented Generation (RAG), CRM management, and memory-based interactions.",
-        "Integrated Cohere for LLM-based responses, FAISS for semantic search, and React-based frontend for user and conversation management.",
-        "Designed fully RESTful APIs with structured JSON responses and implemented memory retention for context-aware replies.",
-        "Developed for a multi-agent AI hackathon challenge."
-      ],
-      techStack: ["FastAPI", "Cohere", "FAISS", "React.js", "RAG"],
-    },
-    {
-      id: 1,
-      title: "Prepstation",
-      description: [
-        "Created a web app for online examinations with features like exam creation, result tracking, and profile management.",
-        "Built using React.js, Node.js, and JavaScript for a responsive, user-friendly experience.",
-        "Implemented robust user and data handling for both students and teachers."
-      ],
-      techStack: ["React.js", "Node.js", "JavaScript"],
-    },
-    {
-      id: 2,
-      title: "Spendee",
-      description: [
-        "Designed a budget management app to track expenses, visualize spending patterns, and manage balances.",
-        "Included features like calculator access, search options, and graphical spending analysis.",
-        "Developed with Java and Android Studio for optimal performance on mobile devices."
-      ],
-      techStack: ["Java", "Android Studio"],
-    },
-    {
-      id: 3,
-      title: "Lung Cancer Detection",
-      description: [
-        "Built an application for early detection of lung cancer using a CNN model and high-resolution lung scans.",
-        "Achieved an accuracy of 85% on small datasets, aiding in accurate and early cancer detection.",
-        "Developed using Python and TensorFlow, utilizing image processing techniques."
-      ],
-      techStack: ["Python", "TensorFlow", "CNN"],
-    },
-    {
-      id: 4,
-      title: "Blood Stroke Clot",
-      description: [
-        "Differentiated between major acute ischemic stroke (AIS) subtypes using a CNN model.",
-        "Achieved 88% accuracy on a small dataset, assisting healthcare providers in identifying clot origins.",
-        "Used Python and machine learning to enhance accuracy and reliability in predictions."
-      ],
-      techStack: ["Python", "Machine Learning", "CNN"],
-    },
-    {
-      id: 5,
-      title: "Morris Health Service",
-      description: [
-        "Developed a Health Service Management system with CRUD functionalities for employees and facilities.",
-        "Implemented Patient Management for inserting, viewing, and updating patient data.",
-        "Generated Management Reports for revenue, appointments, and daily statistics to support decision-making.",
-        "Optimized data handling with MySQL and PHPMyAdmin for efficient operations."
-      ],
-      techStack: ["PHP", "JavaScript", "HTML", "CSS", "MySQL"],
-    },
-    {
-      id: 6,
-      title: "Brazil Climate Hadoop Analysis",
-      description: [
-        "Analyzed large-scale weather data from the southeastern region of Brazil to explore key patterns in temperature, humidity, and wind.",
-        "The dataset, sourced from Kaggle, provided hourly weather data across multiple stations, which was processed using Hadoop MapReduce.",
-        "Developed MapReduce jobs to analyze dry bulb temperature, relative humidity, dew point, and wind speed variations over time.",
-        "Improved job execution times by optimizing memory allocation and using parallel processing."
-      ],
-      techStack: ["Java", "Hadoop", "HDFS", "Oozie", "Python"],
-    },
-    {
-      id: 7,
-      title: "Automated Journal Scraping",
-      description: [
-        "Automated the scraping and analysis of journal articles from Mobile DNA Journal to gather information such as titles, authors, and abstracts.",
-        "Implemented helper functions for extracting article metadata and visualizing publication trends.",
-        "Designed publication trend analysis and keyword frequency visualizations using ggplot2.",
-        "Preprocessed and cleaned datasets to remove duplicates, handle missing values, and ensure reliable analysis."
-      ],
-      techStack: ["R", "rvest", "dplyr", "ggplot2", "stringr", "tidyr"],
-    },
-    {
-      id: 8,
-      title: "User Management System",
-      description: [
-        "Developed a Python-based FastAPI application to manage user accounts, roles, authentication, and profile information.",
-        "Integrated PostgreSQL for secure and scalable data storage.",
-        "Implemented JWT-based authentication and role-based access control for ADMIN, MANAGER, and AUTHENTICATED roles.",
-        "Containerized the application with Docker for seamless deployment and scalability."
-      ],
-      techStack: ["Python", "FastAPI", "PostgreSQL", "Docker", "pytest", "JWT"],
+const projects = [
+  {
+    title: "Multi-Agent Conversational AI System",
+    eyebrow: "AI / RAG Platform",
+    description: "A full-stack conversational AI platform with RAG-based Q&A, CSV ingestion, CRM user management, conversation history, and memory-aware responses.",
+    techStack: ["Python", "FastAPI", "React.js", "SQLite", "SQLAlchemy", "Cohere", "FAISS"],
+    codeUrl: "https://github.com/Manan2606/hackathon_project",
+    architecture: "React UI -> FastAPI APIs -> SQLite CRM Store -> FAISS Index -> Cohere LLM -> Conversation Logging",
+    highlights: ["7 API endpoints", "6-stage RAG pipeline", "2 CRM entities", "CSV ingestion", "Conversation memory"],
+    caseStudy: {
+      problem: "Build a credible AI assistant workflow that could answer with retrieved context while also managing CRM-style users, conversations, and uploaded documents.",
+      built: "A full-stack RAG application with chat, document ingestion, user management, conversation history, and memory-aware responses.",
+      architecture: "React components call FastAPI services; backend persists users/conversations in SQLite with SQLAlchemy, searches FAISS indexes, constructs prompts, calls Cohere, and logs responses.",
+      role: "Owned the application architecture, backend API design, RAG workflow, data models, and frontend integration for the hackathon build.",
+      decisions: "Kept retrieval, prompt construction, response generation, and CRM logging modular so each stage could be tested and improved independently.",
+      outcome: "Delivered 4 core capabilities, 7 REST endpoints, a 6-stage RAG pipeline, and 2 SQLite-backed CRM entities."
     }
+  },
+  {
+    title: "User Management System",
+    eyebrow: "Backend API / Auth",
+    description: "A FastAPI backend for account management, JWT authentication, role-based authorization, PostgreSQL persistence, Dockerized runtime, and pytest validation.",
+    techStack: ["Python", "FastAPI", "PostgreSQL", "Docker", "pytest", "JWT"],
+    codeUrl: "https://github.com/Manan2606/user_management",
+    architecture: "Client -> FastAPI -> JWT Auth -> RBAC Policies -> PostgreSQL -> Dockerized Runtime -> pytest Validation",
+    highlights: ["JWT auth", "RBAC", "PostgreSQL", "Dockerized API", "pytest coverage"],
+    caseStudy: {
+      problem: "Create a backend foundation for secure user operations where authentication, role separation, and maintainable API behavior mattered more than UI polish.",
+      built: "A FastAPI service for user accounts, profile workflows, authentication, and role-based access across admin, manager, and authenticated-user paths.",
+      architecture: "FastAPI exposes REST endpoints, JWT secures requests, RBAC gates privileged operations, PostgreSQL stores account data, Docker standardizes runtime, and pytest validates behavior.",
+      role: "Owned backend implementation, auth flow, database integration, container setup, and endpoint validation strategy.",
+      decisions: "Used JWT and explicit roles to keep authorization readable, PostgreSQL for durable relational data, and Docker/pytest to make the app easier to run and verify.",
+      outcome: "Built a recruiter-verifiable backend project demonstrating auth, RBAC, persistence, containerization, and testable API design."
+    }
+  }
+];
+
+const CaseStudy = ({ project }) => {
+  const entries = [
+    ["Problem", project.caseStudy.problem],
+    ["Built", project.caseStudy.built],
+    ["Architecture", project.caseStudy.architecture],
+    ["Role", project.caseStudy.role],
+    ["Decisions", project.caseStudy.decisions],
+    ["Outcome", project.caseStudy.outcome],
   ];
 
-  // Set up Intersection Observer to track which project is in the center of the screen
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-40% 0px -40% 0px", // Trigger when the element crosses the middle 20% of the viewport
-      threshold: 0,
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveProject(parseInt(entry.target.dataset.id));
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    titleRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      titleRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
-  const activeData = projects.find(p => p.id === activeProject) || projects[0];
-
   return (
-    <section id="projects" className="scrolly-section" aria-labelledby="projects-heading">
-      <div className="scrolly-header-container">
-        <h2 id="projects-heading" className="scrolly-heading">Featured Engineering</h2>
-        <p className="scrolly-subtitle">Scroll down to explore architectures and implementations.</p>
+    <div className="project-case-study">
+      <div className="case-study-heading">
+        <FaProjectDiagram />
+        <span>Case Study</span>
+      </div>
+      <div className="project-case-grid">
+        {entries.map(([label, text]) => (
+          <div className="project-case-item" key={label}>
+            <strong>{label}</strong>
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Projects = () => {
+  return (
+    <section id="projects" className="projects-section" aria-labelledby="projects-heading">
+      <div className="projects-header">
+        <span className="projects-eyebrow">Proof of Work</span>
+        <h2 id="projects-heading">Selected Engineering Work</h2>
+        <p>Two recent GitHub-backed projects showing architecture, API scope, implementation decisions, and backend depth.</p>
       </div>
 
-      <div className="scrolly-container">
-        
-        {/* Left Side: Sticky Glass Console (Desktop Only) */}
-        <div className="scrolly-sticky-col">
-          <div className="sticky-console-glass">
-            {/* The key prop forces React to remount the element and re-trigger the CSS animation */}
-            <div key={activeData.id} className="console-content animate-fade-in">
-              <div className="console-id-badge">0{projects.findIndex(p => p.id === activeData.id) + 1}</div>
-              <h3 className="console-title">{activeData.title}</h3>
-              
-              <ul className="console-desc-list">
-                {activeData.description.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-              
-              <div className="console-tech">
-                {activeData.techStack.map((tech, i) => (
-                  <span key={i} className="console-pill">{tech}</span>
-                ))}
-              </div>
+      <div className="project-showcase-grid">
+        {projects.map((project, index) => (
+          <article className="project-showcase-card" key={project.title}>
+            <div className="project-card-topline">
+              <span className="project-index">0{index + 1}</span>
+              <span className="project-eyebrow">{project.eyebrow}</span>
             </div>
-            
-            {/* Aesthetic UI elements for the 'Console' look */}
-            <div className="console-hud-dots">
-               <span className="hud-dot red"></span>
-               <span className="hud-dot yellow"></span>
-               <span className="hud-dot green"></span>
+
+            <div className="project-card-header">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
             </div>
-          </div>
-        </div>
 
-        {/* Right Side: Scrolling Roster */}
-        <div className="scrolly-roster-col">
-          {projects.map((proj, idx) => {
-            const isActive = activeProject === proj.id;
-            return (
-              <div 
-                key={proj.id}
-                ref={(el) => (titleRefs.current[idx] = el)}
-                data-id={proj.id}
-                className={`roster-item ${isActive ? 'active' : ''}`}
-              >
-                <div className="roster-number">0{idx + 1}</div>
-                <h3 className="roster-title">{proj.title}</h3>
-                
-                {/* Mobile Fallback: Shows inline when sticky col is hidden */}
-                <div className="roster-mobile-details">
-                  <ul className="mobile-desc-list">
-                    {proj.description.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                  <div className="mobile-tech">
-                    {proj.techStack.map((tech, i) => (
-                      <span key={i} className="mobile-pill">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+            <div className="project-architecture">
+              <FaServer />
+              <span>{project.architecture}</span>
+            </div>
 
+            <div className="project-proof-list" aria-label={`${project.title} proof points`}>
+              {project.highlights.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+
+            <div className="project-tech-list">
+              {project.techStack.map((tech) => (
+                <span key={tech}>{tech}</span>
+              ))}
+            </div>
+
+            <CaseStudy project={project} />
+
+            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="project-repo-button">
+              <FaGithub /> View Repository
+            </a>
+          </article>
+        ))}
       </div>
     </section>
   );

@@ -1,9 +1,36 @@
-/* Skills Section - Holographic Cards */
+﻿/* Skills Section - Recruiter Capability Map */
 #skills {
-  padding: 6rem 1.5rem 4rem;
-  text-align: center;
+  padding: 6rem 1.5rem 5rem;
   position: relative;
   z-index: 1;
+}
+
+.skills-shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.skills-heading-block {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2rem;
+}
+
+.skills-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-500) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary-500) 32%, transparent);
+  color: var(--color-primary-400);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
 #skills h2 {
@@ -21,12 +48,6 @@
   position: relative;
 }
 
-.holo-subtitle {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 4rem;
-}
-
 #skills h2::after {
   content: '';
   position: absolute;
@@ -40,142 +61,238 @@
   box-shadow: 0 0 10px var(--color-primary-500);
 }
 
-/* -----------------------------
-   Holographic Grid
-   ----------------------------- */
-.holo-grid {
+.skills-subtitle,
+.holo-subtitle {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+.skills-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
 }
 
-/* We need perspective on the wrapper so the child can rotate in 3D */
-.holo-card-wrapper {
-  perspective: 1200px;
+.skills-stat {
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(15, 15, 20, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+  text-align: center;
 }
 
-/* The actual rotating card */
-.holo-card {
+[data-theme="light"] .skills-stat {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.skills-stat strong {
+  display: block;
+  color: var(--color-primary-400);
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.skills-stat span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-category-card {
   position: relative;
-  background: rgba(15, 15, 20, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-xl);
-  padding: 3rem 2.5rem;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.05);
-  /* The core 3D properties */
-  transform-style: preserve-3d;
-  will-change: transform;
+  min-height: 280px;
+  padding: 1.4rem;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
+    rgba(15, 15, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
-[data-theme="light"] .holo-card {
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(255,255,255,0.5);
-  border-color: rgba(0, 0, 0, 0.05);
+.skill-category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--category-accent) 22%, transparent), transparent 45%);
+  opacity: 0.9;
+  pointer-events: none;
 }
 
-/* The Glare Layer */
-.holo-glare {
+.skill-category-card::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  border-radius: inherit; /* Keeps the glare perfectly inside the rounded card */
-  pointer-events: none;
-  z-index: 10;
-  /* mix-blend-mode looks amazing for holographic lighting */
-  mix-blend-mode: color-dodge;
+  height: 3px;
+  background: linear-gradient(90deg, var(--category-accent), transparent);
 }
 
-[data-theme="light"] .holo-glare {
-  mix-blend-mode: normal; /* color-dodge is too blown out on white backgrounds */
+[data-theme="light"] .skill-category-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.74)),
+    rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-/* -----------------------------
-   3D Content Layers
-   ----------------------------- */
-/* This pops the title out from the background */
-.holo-title {
-  transform: translateZ(50px);
-  font-family: var(--font-family-heading);
-  font-size: 1.6rem;
-  color: var(--color-primary-400);
-  margin-bottom: 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  pointer-events: none; /* Let mouse pass through to card */
+.skill-category-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--category-accent) 58%, rgba(255, 255, 255, 0.18));
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.42), 0 0 30px color-mix(in srgb, var(--category-accent) 18%, transparent);
 }
 
-/* This pops the skills out even further! */
-.holo-skills-grid {
+.skill-card-header,
+.skill-chip-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.skill-card-header h3 {
+  color: var(--color-neutral-900);
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+[data-theme="light"] .skill-card-header h3 {
+  color: #111;
+}
+
+.skill-card-header p {
+  color: var(--text-muted-inverse);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 90%;
+}
+
+[data-theme="light"] .skill-card-header p {
+  color: var(--text-muted);
+}
+
+.skill-count {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--category-accent) 18%, rgba(255, 255, 255, 0.06));
+  border: 1px solid color-mix(in srgb, var(--category-accent) 40%, rgba(255, 255, 255, 0.12));
+  color: var(--color-neutral-900);
+  font-weight: 900;
+}
+
+[data-theme="light"] .skill-count {
+  color: #111;
+}
+
+.skill-chip-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-  transform: translateZ(80px);
-  pointer-events: none; 
+  gap: 0.7rem;
 }
 
-.holo-skill {
-  display: flex;
+.skill-chip {
+  display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  color: var(--body-color);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  pointer-events: auto; /* Re-enable for hovering */
+  gap: 0.5rem;
+  min-height: 2.35rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--color-neutral-900);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
-[data-theme="light"] .holo-skill {
-  background: rgba(0,0,0,0.03);
-  border-color: rgba(0,0,0,0.08);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+[data-theme="light"] .skill-chip {
+  color: #111;
+  background: rgba(0, 0, 0, 0.035);
+  border-color: rgba(0, 0, 0, 0.07);
 }
 
-.holo-skill:hover {
-  background: rgba(0,0,0,0.2);
-  border-color: var(--skill-color);
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 15px var(--skill-color);
+.skill-chip:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--category-accent) 18%, rgba(255, 255, 255, 0.08));
+  border-color: color-mix(in srgb, var(--category-accent) 52%, rgba(255, 255, 255, 0.16));
 }
 
-.holo-icon {
-  font-size: 1.2rem;
-  color: var(--skill-color);
-  filter: drop-shadow(0 0 5px var(--skill-color));
+.skill-chip-icon {
+  display: inline-flex;
+  color: var(--category-accent);
+  font-size: 1rem;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--category-accent) 45%, transparent));
 }
 
-.holo-name {
-  font-size: 0.95rem;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .holo-grid {
+@media (max-width: 980px) {
+  .skills-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    max-width: 600px;
   }
 }
 
-@media (max-width: 768px) {
-  .holo-card {
-    padding: 2rem 1.5rem;
+@media (max-width: 680px) {
+  #skills {
+    padding: 4.5rem 1rem 4rem;
   }
-  .holo-title {
-    transform: translateZ(30px);
+
+  #skills h2 {
+    font-size: 2.4rem;
   }
-  .holo-skills-grid {
-    transform: translateZ(50px);
+
+  .skills-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-category-card {
+    min-height: 0;
+    padding: 1.15rem;
+  }
+
+  .skill-card-header {
+    flex-direction: column;
+  }
+
+  .skill-card-header p {
+    max-width: 100%;
+  }
+
+  .skill-count {
+    width: auto;
+    height: auto;
+    align-self: flex-start;
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
   }
 }

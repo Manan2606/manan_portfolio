@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React, { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -14,6 +14,13 @@ import CommandCenter from "./components/CommandCenter";
 import ResumeModal from "./components/ResumeModal";
 
 function App() {
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <div className="App">
       <Header />

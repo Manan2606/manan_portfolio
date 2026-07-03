@@ -279,3 +279,41 @@
     margin-top: 1rem;
   }
 }
+
+/* Compact footer after hero owns social CTAs */
+.compact-footer-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  grid-template-rows: auto;
+}
+
+.compact-footer-hero,
+.compact-footer-info {
+  grid-column: span 1;
+  grid-row: auto;
+  min-height: 260px;
+}
+
+.compact-footer-hero h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.compact-footer-info .info-list {
+  flex-wrap: wrap;
+}
+
+.compact-footer-info .info-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+@media (max-width: 820px) {
+  .compact-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-footer-hero,
+  .compact-footer-info {
+    min-height: auto;
+  }
+}

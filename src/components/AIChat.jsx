@@ -1,22 +1,46 @@
-import React, { useState, useRef, useEffect } from "react";
-import axios from "axios";
+﻿import React, { useState, useRef, useEffect } from "react";
 import { FaRobot, FaTimes, FaPaperPlane } from "react-icons/fa";
 import "../css/AIChat.css";
 
-const SYSTEM_PROMPT = `You are Manan's AI Assistant, built to represent Manan Shah, a Full-Stack & AI Engineer. 
-Your goal is to answer questions about his portfolio, skills, experience, and projects in a friendly, professional, and slightly enthusiastic tone.
-Here is some information about Manan:
-- **Education**: M.S. in Computer Science at NJIT (GPA 4.0), B.Tech in Computer Engineering at Charusat University.
-- **Skills**: React, Node.js, Python, FastAPI, Docker, AWS, SQL, Machine Learning (TensorFlow).
-- **Experience**: Software Engineer at H2 Techno World (built full-stack inventory management, CI/CD, AWS deployments). Software Developer at Crown Software.
-- **Projects**: Prepstation (online exam web app), Lung Cancer Detection (CNN model, 85% accuracy), Multi-Agentic Conversational AI System, User Management System (FastAPI, Docker).
-- **Certifications**: AWS Certified Cloud Practitioner, AWS Cloud Developer Associate.
-Keep answers concise (under 3 sentences) unless asked for details. If you don't know the answer, gracefully say you're not sure but they can contact Manan directly using the Contact form.`;
+const KNOWLEDGE_BASE = [
+  {
+    keywords: ["experience", "capgemini", "current", "work", "job"],
+    answer: "Manan is an Application Consultant / Software Engineer at Capgemini, working on Dialogflow CX and Google Cloud enhancements while learning Gemini Enterprise for Customer Experience (GECX) for an enterprise CCaaS platform. His work includes routing analysis, webhook/API debugging, cloud logging, BigQuery, Looker, and release validation."
+  },
+  {
+    keywords: ["project", "rag", "ai", "agent", "conversational", "cohere", "faiss"],
+    answer: "His strongest AI project is a multi-agent conversational AI platform with FastAPI, React, SQLite, SQLAlchemy, Cohere, and FAISS. It includes 7 API endpoints and a 6-stage RAG pipeline for history retrieval, semantic search, contextual prompting, response generation, and logging."
+  },
+  {
+    keywords: ["cloud", "aws", "gcp", "google", "certification", "certified"],
+    answer: "Manan has AWS Cloud Practitioner, AWS Certified Developer - Associate, and Google Associate Cloud Engineer credentials listed on his latest resume. His practical cloud work includes AWS EC2, Docker deployments, Dialogflow CX, GECX learning, Cloud Run, Cloud Logging, and BigQuery."
+  },
+  {
+    keywords: ["skill", "stack", "technology", "backend", "frontend", "database"],
+    answer: "His core stack includes Python, Java, JavaScript, TypeScript, SQL, React, FastAPI, Spring Boot, Node.js, PostgreSQL, MySQL, MongoDB, SQLite, Docker, GitHub Actions, AWS, and GCP."
+  },
+  {
+    keywords: ["education", "school", "njit", "gpa", "degree"],
+    answer: "Manan completed an M.S. in Computer Science at NJIT with a 3.9/4.0 GPA and a B.E. in Computer Engineering from Charusat University with a 9.75/10 GPA."
+  },
+  {
+    keywords: ["contact", "email", "phone", "linkedin", "github", "resume"],
+    answer: "You can contact Manan at mananshah2602@gmail.com, view his GitHub at github.com/Manan2606, or download the latest resume from the Resume button on this portfolio."
+  }
+];
+
+const DEFAULT_ANSWER = "I can answer questions about Manan's experience, projects, skills, education, certifications, or contact details. For anything very specific, use the contact form so Manan can respond directly.";
+
+const getPortfolioAnswer = (question) => {
+  const normalized = question.toLowerCase();
+  const match = KNOWLEDGE_BASE.find((entry) => entry.keywords.some((keyword) => normalized.includes(keyword)));
+  return match ? match.answer : DEFAULT_ANSWER;
+};
 
 const AIChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: "assistant", content: "Hi! I'm Manan's AI clone. Ask me anything about his experience, projects, or skills!" }
+    { role: "assistant", content: "Hi, I'm Manan's portfolio assistant. Ask about his experience, projects, skills, or certifications." }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -35,11 +59,10 @@ const AIChat = () => {
   useEffect(() => {
     const handleOpenChat = () => {
       setIsOpen(true);
-      // Add a quick attention animation class if needed
       const chatWindow = document.querySelector('.chat-window');
       if (chatWindow) {
         chatWindow.classList.remove('pulse-animation');
-        void chatWindow.offsetWidth; // trigger reflow
+        void chatWindow.offsetWidth;
         chatWindow.classList.add('pulse-animation');
       }
     };
@@ -47,81 +70,40 @@ const AIChat = () => {
     return () => window.removeEventListener('openAIChat', handleOpenChat);
   }, []);
 
-  const handleSend = async (e) => {
+  const handleSend = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
     const userMessage = { role: "user", content: input };
+    const answer = getPortfolioAnswer(input);
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
-    try {
-      const chatHistory = messages.map(m => ({ role: m.role, content: m.content }));
-      
-      const response = await axios.post(
-        "https://api.groq.com/openai/v1/chat/completions",
-        {
-          model: "llama-3.1-8b-instant", // Fast open source model
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            ...chatHistory,
-            userMessage
-          ],
-          temperature: 0.7,
-          max_tokens: 150,
-        },
-        {
-          headers: {
-            "Authorization": `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`,
-            "Content-Type": "application/json"
-          }
-        }
-      );
-
-      const aiMessage = {
-        role: "assistant",
-        content: response.data.choices[0].message.content
-      };
-
-      setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
-      console.error("AI Chat Error:", error);
-      let errorText = "Oops! I couldn't reach the server right now. Please try again later.";
-      
-      if (error.response && error.response.status === 401) {
-          errorText = "Oops! The API key is invalid or not set up yet. Manan will fix this soon!";
-      }
-
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: errorText }
-      ]);
-    } finally {
+    window.setTimeout(() => {
+      setMessages((prev) => [...prev, { role: "assistant", content: answer }]);
       setIsLoading(false);
-    }
+    }, 300);
   };
 
   return (
     <div className="ai-chat-container">
-      {/* Chat Button */}
-      <button 
-        className={`chat-toggle-btn ${isOpen ? 'hidden' : ''}`} 
+      <button
+        className={`chat-toggle-btn ${isOpen ? 'hidden' : ''}`}
         onClick={() => setIsOpen(true)}
-        aria-label="Open AI Assistant"
+        aria-label="Open Portfolio Assistant"
       >
         <FaRobot className="bot-icon" />
-        <span className="tooltip">Ask Manan AI</span>
+        <span className="tooltip">Ask Portfolio Assistant</span>
       </button>
 
-      {/* Chat Window */}
       <div className={`chat-window ${isOpen ? 'open' : ''}`}>
         <div className="chat-header">
           <div className="header-info">
             <FaRobot className="header-icon" />
-            <span>Manan's AI Assistant</span>
+            <span>Portfolio Assistant</span>
           </div>
-          <button className="close-btn" onClick={() => setIsOpen(false)}>
+          <button className="close-btn" onClick={() => setIsOpen(false)} aria-label="Close assistant">
             <FaTimes />
           </button>
         </div>
@@ -147,14 +129,14 @@ const AIChat = () => {
         </div>
 
         <form className="chat-input-area" onSubmit={handleSend}>
-          <input 
-            type="text" 
+          <input
+            type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about my projects..."
+            placeholder="Ask about projects, cloud, skills..."
             disabled={isLoading}
           />
-          <button type="submit" disabled={isLoading || !input.trim()}>
+          <button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message">
             <FaPaperPlane />
           </button>
         </form>
@@ -164,3 +146,5 @@ const AIChat = () => {
 };
 
 export default AIChat;
+
+
