@@ -1,23 +1,23 @@
-﻿import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaRobot, FaTimes, FaPaperPlane } from "react-icons/fa";
 import "../css/AIChat.css";
 
 const KNOWLEDGE_BASE = [
   {
-    keywords: ["experience", "capgemini", "current", "work", "job"],
-    answer: "Manan is an Application Consultant / Software Engineer at Capgemini, working on Dialogflow CX and Google Cloud enhancements while learning Gemini Enterprise for Customer Experience (GECX) for an enterprise CCaaS platform. His work includes routing analysis, webhook/API debugging, cloud logging, BigQuery, Looker, and release validation."
+    keywords: ["experience", "capgemini", "current", "work", "job", "dialogflow", "gecx"],
+    answer: "Manan is an Application Consultant / Software Engineer at Capgemini, working on Dialogflow CX and Google Cloud enhancements for an enterprise CCaaS platform. His work includes routing analysis, webhook/API debugging, Cloud Logging, BigQuery, Looker, and release validation."
   },
   {
-    keywords: ["project", "rag", "ai", "agent", "conversational", "cohere", "faiss"],
-    answer: "His strongest AI project is a multi-agent conversational AI platform with FastAPI, React, SQLite, SQLAlchemy, Cohere, and FAISS. It includes 7 API endpoints and a 6-stage RAG pipeline for history retrieval, semantic search, contextual prompting, response generation, and logging."
+    keywords: ["project", "rag", "ai", "agent", "conversational", "cohere", "faiss", "queryshield", "text-to-sql", "sqlglot", "gemini", "bigquery"],
+    answer: "His recent AI projects include QueryShield AI, a governed Text-to-SQL analytics platform with Gemini, BigQuery, SQLGlot, and GCP guardrails, plus a multi-agent conversational AI platform with FastAPI, React, SQLite, Cohere, and FAISS."
   },
   {
     keywords: ["cloud", "aws", "gcp", "google", "certification", "certified"],
-    answer: "Manan has AWS Cloud Practitioner, AWS Certified Developer - Associate, and Google Associate Cloud Engineer credentials listed on his latest resume. His practical cloud work includes AWS EC2, Docker deployments, Dialogflow CX, GECX learning, Cloud Run, Cloud Logging, and BigQuery."
+    answer: "Manan has AWS Cloud Practitioner, AWS Certified Developer - Associate, and Google Associate Cloud Engineer credentials listed on his latest resume. His practical cloud work includes AWS EC2, Docker deployments, Dialogflow CX, Gemini Enterprise CX, Cloud Run, Cloud Logging, and BigQuery."
   },
   {
-    keywords: ["skill", "stack", "technology", "backend", "frontend", "database"],
-    answer: "His core stack includes Python, Java, JavaScript, TypeScript, SQL, React, FastAPI, Spring Boot, Node.js, PostgreSQL, MySQL, MongoDB, SQLite, Docker, GitHub Actions, AWS, and GCP."
+    keywords: ["skill", "stack", "technology", "backend", "frontend", "database", "tech"],
+    answer: "His focused stack includes Python, FastAPI, React, Next.js, TypeScript, SQL, PostgreSQL, BigQuery, Docker, GitHub Actions, AWS, GCP, Dialogflow CX, Gemini, FAISS, and Cohere."
   },
   {
     keywords: ["education", "school", "njit", "gpa", "degree"],

@@ -1,14 +1,15 @@
-﻿import React from "react";
 import "../css/About.css";
 import NewPhoto from "../Manan_Headshot.png";
 import { FaAws, FaDownload, FaGithub, FaGoogle, FaLinkedin, FaRobot, FaServer } from "react-icons/fa";
 
 const About = () => {
+  const roleFit = ["Backend APIs", "Cloud delivery", "AI data systems"];
+
   const proofItems = [
     { label: "3 Cloud Certs", detail: "AWS + GCP", icon: <FaGoogle /> },
     { label: "GCP + AWS", detail: "Cloud delivery", icon: <FaAws /> },
-    { label: "FastAPI / React", detail: "Full-stack systems", icon: <FaServer /> },
-    { label: "AI / RAG", detail: "FAISS + Cohere", icon: <FaRobot /> },
+    { label: "Backend APIs", detail: "FastAPI + SQL", icon: <FaServer /> },
+    { label: "AI Data Apps", detail: "RAG + Text-to-SQL", icon: <FaRobot /> },
   ];
 
   return (
@@ -33,6 +34,12 @@ const About = () => {
             Software Engineer | AI & Cloud Systems
           </h3>
 
+          <div className="role-fit-row" aria-label="Target role fit">
+            {roleFit.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+
           <div className="executive-proof-row" aria-label="Profile proof points">
             {proofItems.map((item) => (
               <div className="executive-proof-item" key={item.label}>
@@ -47,18 +54,18 @@ const About = () => {
 
           <div className="executive-text">
             <p className="executive-hook">
-              Backend-focused software engineer building reliable APIs, AI-enabled workflows, and cloud systems for production environments.
+              Software engineer focused on backend APIs, cloud delivery, and practical AI systems that move from prototype to production.
             </p>
             <p className="executive-description">
-              At Capgemini, I deliver Dialogflow CX and Google Cloud enhancements while expanding into Gemini Enterprise for Customer Experience (GECX) for an enterprise CCaaS platform, tracing conversation flows, webhook behavior, cloud logs, and backend dependencies to improve routing accuracy and reduce call latency.
+              At Capgemini, I work on Dialogflow CX and Google Cloud enhancements for an enterprise CCaaS platform, debugging conversation flows, webhooks, cloud logs, and backend dependencies to improve routing accuracy and reduce call latency.
             </p>
             <p className="executive-description">
-              Recent work spans <strong>FastAPI</strong>, <strong>React</strong>, <strong>PostgreSQL</strong>, <strong>Docker</strong>, <strong>AWS</strong>, <strong>Cloud Run</strong>, <strong>BigQuery</strong>, <strong>GECX - learning</strong>, and RAG systems built with <strong>FAISS</strong> and <strong>Cohere</strong>.
+              My strongest stack centers on <strong>Python</strong>, <strong>FastAPI</strong>, <strong>React</strong>, <strong>PostgreSQL</strong>, <strong>BigQuery</strong>, <strong>Docker</strong>, <strong>AWS</strong>, <strong>GCP</strong>, and AI workflows using <strong>Gemini</strong>, <strong>FAISS</strong>, and <strong>Cohere</strong>.
             </p>
           </div>
 
           <div className="executive-actions" aria-label="Primary profile links">
-            <a className="executive-action primary" href="/Manan_Shah_Resume_06302026.pdf" download="Manan_Shah_Resume.pdf">
+            <a className="executive-action primary" href="/Manan_Shah_Resume_07192026.pdf" download="Manan_Shah_Resume_07192026.pdf">
               <FaDownload /> Resume
             </a>
             <a className="executive-action" href="https://github.com/Manan2606" target="_blank" rel="noopener noreferrer">

@@ -1,5 +1,5 @@
-﻿import React, { useState } from "react";
-import { FaCalendarAlt, FaBuilding, FaBullseye, FaStar, FaChevronDown } from "react-icons/fa";
+import { useState } from "react";
+import { FaCalendarAlt, FaBuilding, FaBullseye, FaChevronDown } from "react-icons/fa";
 import "../css/Experience.css";
 
 const Experience = () => {

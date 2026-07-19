@@ -1,11 +1,11 @@
-﻿# Manan Shah - Software Engineer | AI & Cloud Systems
+# Manan Shah - Software Engineer | AI & Cloud Systems
 
-Backend-focused software engineer building reliable APIs, cloud systems, and AI-enabled workflows for production environments. Currently learning Gemini Enterprise for Customer Experience (GECX).
+Software engineer focused on backend APIs, cloud delivery, and practical AI systems for production environments.
 
 ## Summary
 
-- Software engineer with experience in backend development, cloud systems, and AI-enabled enterprise workflows.
-- Strong in REST API development, production debugging, cloud observability, and performance optimization.
+- Software engineer focused on backend APIs, cloud systems, and AI-enabled product workflows.
+- Strong in REST API development, production debugging, cloud observability, and governed AI/data workflows.
 - U.S. Permanent Resident with verified AWS and Google Cloud credentials.
 
 ## Quick Links
@@ -34,9 +34,17 @@ Backend-focused software engineer building reliable APIs, cloud systems, and AI-
 - Led SQL-focused backend work after 3 months by debugging and optimizing PHP-integrated database queries across student management workflows.
 - Contributed through daily Agile standups, GitHub-based version control, and collaborative feature development.
 
-## Selected Project
+## Selected Projects
 
-### [Multi-Agent Conversational AI System](https://github.com/Manan2606/hackathon_project) (Jul 2025)
+### [QueryShield AI](https://github.com/Manan2606/QueryShield_AI) (Jul 2026)
+
+**Stack:** FastAPI, Next.js, TypeScript, SQLite, BigQuery, Gemini, SQLGlot
+
+- Built a full-stack governed Text-to-SQL analytics platform from CSV upload to AI-generated SQL, parser-based validation, controlled execution, charting, summaries, and audit logging.
+- Implemented a 5+ layer query governance pipeline with JWT authentication, dataset ownership checks, SQLGlot validation, BigQuery dry-run cost checks, and row/timeout limits.
+- Deployed on GCP using BigQuery, Cloud Run, Cloud Storage, Secret Manager, and Artifact Registry with Docker, GitHub Actions, and Workload Identity Federation.
+
+### [Multi-Agent Conversational AI System](https://github.com/Manan2606/Multi_Agentic_Conversational_AI_System) (Jul 2025)
 
 **Stack:** Python, FastAPI, React.js, SQLite, SQLAlchemy, Cohere, FAISS
 
@@ -51,9 +59,9 @@ Backend-focused software engineer building reliable APIs, cloud systems, and AI-
 
 ## Skills Snapshot
 
-| Languages | Frontend & Backend | Databases & Analytics | Cloud & DevOps | AI & Data | Tools |
-| --- | --- | --- | --- | --- | --- |
-| Python, Java, JavaScript, TypeScript, SQL, C++, PHP | React.js, Next.js, Vue.js, FastAPI, Spring Boot, Node.js, REST APIs, Microservices, SQLAlchemy, HTML5, CSS3 | PostgreSQL, MySQL, MongoDB, SQLite, BigQuery, SQL Optimization, Data Validation | GCP, Dialogflow CX, GECX learning, Cloud Run, Cloud Logging, AWS, EC2, S3, RDS, Lambda, Docker, GitHub Actions, Git | RAG, FAISS, Cohere LLM, Machine Learning, TensorFlow, ETL/ELT, Looker | JIRA, Postman, pytest, Cursor, Visio, Confluence |
+| Backend & APIs | Frontend | Data & AI | Cloud & Delivery | Tools |
+| --- | --- | --- | --- | --- |
+| Python, FastAPI, Node.js, REST APIs, SQLAlchemy, Java, SQL | React.js, Next.js, TypeScript, JavaScript, Vue.js, HTML5/CSS3 | BigQuery, PostgreSQL, MySQL, SQLite, RAG, FAISS, Gemini, Cohere, SQLGlot | GCP, Dialogflow CX, Gemini Enterprise CX, Cloud Run, Cloud Logging, AWS, Docker, GitHub Actions | JIRA, Postman, pytest, Looker, Confluence |
 
 ## Certifications
 

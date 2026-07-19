@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import About from "./components/About";

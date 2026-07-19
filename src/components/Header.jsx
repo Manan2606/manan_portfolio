@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import { FaSun, FaMoon, FaTerminal, FaUserAlt, FaCode, FaTools, FaEnvelope, FaBriefcase, FaCertificate, FaGraduationCap } from "react-icons/fa";
 import "../css/Header.css";
 

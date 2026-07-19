@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaTimes, FaDownload } from 'react-icons/fa';
 import '../css/ResumeModal.css';
 
@@ -29,8 +29,8 @@ const ResumeModal = () => {
           <h2 className="resume-modal-title">Manan Shah - Resume</h2>
           <div className="resume-modal-actions">
             <a 
-              href="/Manan_Shah_Resume_06302026.pdf" 
-              download="Manan_Shah_Resume.pdf" 
+              href="/Manan_Shah_Resume_07192026.pdf" 
+              download="Manan_Shah_Resume_07192026.pdf" 
               className="resume-download-btn"
             >
               <FaDownload /> <span>Download</span>
@@ -43,7 +43,7 @@ const ResumeModal = () => {
         <div className="resume-modal-body">
           {/* Native HTML Object to load the PDF seamlessly without heavy libraries */}
           <object 
-            data="/Manan_Shah_Resume_06302026.pdf#view=FitH" 
+            data="/Manan_Shah_Resume_07192026.pdf#view=FitH" 
             type="application/pdf" 
             width="100%" 
             height="100%"
@@ -51,7 +51,7 @@ const ResumeModal = () => {
           >
             <div className="resume-fallback">
               <p>Your browser does not support inline PDFs.</p>
-              <a href="/Manan_Shah_Resume_06302026.pdf" className="resume-download-btn fallback-btn">
+              <a href="/Manan_Shah_Resume_07192026.pdf" download="Manan_Shah_Resume_07192026.pdf" className="resume-download-btn fallback-btn">
                 Download PDF Instead
               </a>
             </div>

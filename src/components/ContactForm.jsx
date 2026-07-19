@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../css/ContactForm.css";
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
     }
   };
 
-  const sendEmail = (name, email, message, currentHistory) => {
+  const sendEmail = (name, email, message) => {
     // We must use emailjs.send since we aren't using a <form> ref anymore
     const templateParams = {
       user_name: name,

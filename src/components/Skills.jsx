@@ -1,4 +1,4 @@
-﻿import {
+import {
   FaAws,
   FaBrain,
   FaChartBar,
@@ -25,107 +25,92 @@
   FaVuejs,
   FaVial,
 } from "react-icons/fa";
-import { SiMongodb, SiMysql } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
 import "../css/skills.css";
 
 const categories = [
   {
     title: "Languages",
-    summary: "Core programming languages used across backend, frontend, data, and systems coursework.",
+    summary: "The languages I use most for APIs, automation, data work, and full-stack delivery.",
     accent: "#7c3aed",
     skills: [
       { name: "Python", icon: <FaPython /> },
-      { name: "Java", icon: <FaJava /> },
       { name: "JavaScript", icon: <FaJs /> },
       { name: "TypeScript", icon: <FaCode /> },
       { name: "SQL", icon: <FaDatabase /> },
-      { name: "C++", icon: <FaCode /> },
-      { name: "PHP", icon: <FaCode /> },
+      { name: "Java", icon: <FaJava /> },
     ],
   },
   {
-    title: "Frontend & Backend",
-    summary: "Application frameworks, API design, service architecture, and production web delivery.",
+    title: "Backend & APIs",
+    summary: "Backend services, API design, auth workflows, and maintainable server-side systems.",
     accent: "#00ccff",
+    skills: [
+      { name: "FastAPI", icon: <FaServer /> },
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "REST APIs", icon: <FaCogs /> },
+      { name: "SQLAlchemy", icon: <FaDatabase /> },
+      { name: "Spring Boot", icon: <FaLeaf /> },
+    ],
+  },
+  {
+    title: "Frontend",
+    summary: "Practical UI work for dashboards, portfolio experiences, and full-stack products.",
+    accent: "#22c55e",
     skills: [
       { name: "React.js", icon: <FaReact /> },
       { name: "Next.js", icon: <FaCode /> },
       { name: "Vue.js", icon: <FaVuejs /> },
-      { name: "FastAPI", icon: <FaServer /> },
-      { name: "Spring Boot", icon: <FaLeaf /> },
-      { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "REST APIs", icon: <FaCogs /> },
-      { name: "Microservices", icon: <FaServer /> },
-      { name: "SQLAlchemy", icon: <FaDatabase /> },
       { name: "HTML5 / CSS3", icon: <FaHtml5 /> },
     ],
   },
   {
-    title: "Databases & Analytics",
-    summary: "Relational, document, embedded, and warehouse systems used in product and cloud workflows.",
-    accent: "#22c55e",
+    title: "Data & AI",
+    summary: "Applied AI systems, governed analytics, retrieval pipelines, and production data workflows.",
+    accent: "#a855f7",
     skills: [
+      { name: "BigQuery", icon: <FaChartBar /> },
       { name: "PostgreSQL", icon: <FaDatabase /> },
       { name: "MySQL", icon: <SiMysql /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "SQLite", icon: <FaDatabase /> },
-      { name: "BigQuery", icon: <FaChartBar /> },
-      { name: "SQL Optimization", icon: <FaSearch /> },
-      { name: "Data Validation", icon: <FaVial /> },
+      { name: "RAG", icon: <FaRobot /> },
+      { name: "FAISS", icon: <FaSearch /> },
+      { name: "Gemini", icon: <FaBrain /> },
+      { name: "Cohere", icon: <FaBrain /> },
+      { name: "SQLGlot", icon: <FaVial /> },
     ],
   },
   {
-    title: "Cloud & DevOps",
-    summary: "Certified cloud platforms, deployment workflows, infrastructure, and observability tools.",
+    title: "Cloud & Delivery",
+    summary: "Certified cloud platforms, observability, containers, and release automation.",
     accent: "#f59e0b",
     skills: [
       { name: "GCP", icon: <FaCloud /> },
       { name: "Dialogflow CX", icon: <FaCommentDots /> },
-      { name: "GECX - Learning", icon: <FaRobot /> },
+      { name: "Gemini Enterprise CX", icon: <FaRobot /> },
       { name: "Cloud Run", icon: <FaCloud /> },
       { name: "Cloud Logging", icon: <FaChartLine /> },
       { name: "AWS", icon: <FaAws /> },
-      { name: "EC2", icon: <FaAws /> },
-      { name: "S3", icon: <FaAws /> },
-      { name: "RDS", icon: <FaAws /> },
-      { name: "Lambda", icon: <FaAws /> },
       { name: "Docker", icon: <FaDocker /> },
       { name: "GitHub Actions", icon: <FaGitAlt /> },
-      { name: "Git", icon: <FaGitAlt /> },
-    ],
-  },
-  {
-    title: "AI & Data Systems",
-    summary: "Applied AI workflows from retrieval pipelines to LLM integration and data processing fundamentals.",
-    accent: "#a855f7",
-    skills: [
-      { name: "RAG", icon: <FaRobot /> },
-      { name: "FAISS", icon: <FaSearch /> },
-      { name: "Cohere LLM", icon: <FaBrain /> },
-      { name: "Machine Learning", icon: <FaBrain /> },
-      { name: "TensorFlow", icon: <FaBrain /> },
-      { name: "ETL / ELT", icon: <FaCogs /> },
-      { name: "Looker", icon: <FaChartLine /> },
     ],
   },
   {
     title: "Engineering Tools",
-    summary: "Collaboration, testing, documentation, API validation, and delivery tools used on real teams.",
+    summary: "Team delivery, testing, API validation, documentation, and operational analysis.",
     accent: "#ef4444",
     skills: [
       { name: "JIRA", icon: <FaTasks /> },
       { name: "Postman", icon: <FaTools /> },
       { name: "pytest", icon: <FaVial /> },
-      { name: "Cursor", icon: <FaCode /> },
-      { name: "Visio", icon: <FaChartLine /> },
+      { name: "Looker", icon: <FaChartLine /> },
       { name: "Confluence", icon: <FaTools /> },
     ],
   },
 ];
 
 const featuredStats = [
-  { value: "6", label: "Skill Domains" },
-  { value: "50", label: "Resume Skills Covered" },
+  { value: "6", label: "Focused Areas" },
+  { value: "35", label: "Core Skills" },
   { value: "3", label: "Cloud Certifications" },
 ];
 
@@ -134,10 +119,10 @@ const Skills = () => {
     <section id="skills" aria-labelledby="skills-heading">
       <div className="skills-shell">
         <div className="skills-heading-block">
-          <span className="skills-eyebrow">Capability Map</span>
+          <span className="skills-eyebrow">Focused Stack</span>
           <h2 id="skills-heading">Tech Stack</h2>
           <p className="skills-subtitle">
-            Core technologies used across production engineering, cloud platforms, AI workflows, backend systems, and team delivery.
+            A focused view of the tools I use most for backend APIs, cloud delivery, AI workflows, and full-stack product work.
           </p>
         </div>
 
@@ -178,7 +163,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-
-
-

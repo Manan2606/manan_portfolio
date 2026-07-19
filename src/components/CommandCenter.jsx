@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FaSearch, FaTimes, FaFilePdf, FaMoon, FaRobot, FaEnvelope, FaCode, FaUser, FaSun } from 'react-icons/fa';
+import { useState, useEffect, useRef } from 'react';
+import { FaSearch, FaTimes, FaFilePdf, FaMoon, FaRobot, FaEnvelope, FaCode, FaUser } from 'react-icons/fa';
 import '../css/CommandCenter.css';
 
 const CommandCenter = () => {

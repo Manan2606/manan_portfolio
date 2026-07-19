@@ -1,4 +1,3 @@
-﻿import React from "react";
 import { FaArrowRight, FaEnvelope, FaTerminal } from "react-icons/fa";
 import "../css/Footer.css";
 
@@ -18,7 +17,7 @@ const Footer = () => {
       <div className="bento-container">
         <div className="bento-grid compact-footer-grid">
           <div className="bento-card bento-hero compact-footer-hero">
-            <h3>Let's discuss <span className="bento-highlight">engineering impact.</span></h3>
+            <h3>Let&apos;s discuss <span className="bento-highlight">engineering impact.</span></h3>
             <a href="#chat" onClick={handleSayHello} className="bento-btn">
               Ask Portfolio Assistant <FaArrowRight />
             </a>
