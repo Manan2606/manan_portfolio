@@ -6,6 +6,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import GoogleSkillBadges from "./components/GoogleSkillBadges";
 import Certifications from "./components/Certifications";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
@@ -30,6 +31,7 @@ function App() {
         <Projects />
         <Education />
         <Skills />
+        <GoogleSkillBadges />
         <Certifications />
         <ContactForm />
       </main>

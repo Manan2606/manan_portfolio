@@ -1,0 +1,367 @@
+.google-badges-section {
+  padding: 5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.google-badges-shell {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.google-badges-header {
+  max-width: 780px;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+.google-badges-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, #4285f4 13%, transparent);
+  border: 1px solid color-mix(in srgb, #4285f4 32%, transparent);
+  color: #8ab4f8;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .google-badges-eyebrow {
+  color: #1a73e8;
+}
+
+.google-badges-header h2 {
+  font-size: 3rem;
+  font-weight: 850;
+  margin-bottom: 0.7rem;
+  background: linear-gradient(135deg, #4285f4, #34a853 42%, #fbbc04 72%, #ea4335);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.google-badges-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.google-badges-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(66, 133, 244, 0.14), rgba(52, 168, 83, 0.08)),
+    rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="light"] .google-badges-hero {
+  background:
+    linear-gradient(135deg, rgba(66, 133, 244, 0.11), rgba(52, 168, 83, 0.07)),
+    rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+}
+
+.google-badges-summary {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  min-width: 0;
+}
+
+.google-badges-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #8ab4f8;
+  font-size: 1.75rem;
+}
+
+[data-theme="light"] .google-badges-mark {
+  background: rgba(255, 255, 255, 0.75);
+  color: #1a73e8;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.google-badges-kicker {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #81c995;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .google-badges-kicker {
+  color: #188038;
+}
+
+.google-badges-summary h3 {
+  color: var(--body-color);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}
+
+.google-badges-summary p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.google-badges-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.google-badge-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5.2rem;
+  padding: 0.85rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  text-align: center;
+}
+
+[data-theme="light"] .google-badge-stat {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+.google-badge-stat strong {
+  color: #fbbc04;
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.google-badge-stat span {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.google-badges-focus {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.google-badges-focus span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--body-color);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+[data-theme="light"] .google-badges-focus span {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+.google-badges-focus svg {
+  color: #4285f4;
+}
+
+.google-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.google-badge-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 13.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(15, 18, 24, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="light"] .google-badge-card {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+    rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.google-badge-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(66, 133, 244, 0.36);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="light"] .google-badge-card:hover {
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.12);
+}
+
+.google-badge-topline,
+.google-badge-meta,
+.google-badge-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.google-badge-topline {
+  margin-bottom: 0.85rem;
+}
+
+.google-badge-number {
+  color: #8ab4f8;
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+[data-theme="light"] .google-badge-number {
+  color: #1a73e8;
+}
+
+.google-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #81c995;
+  font-size: 0.68rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .google-badge-verified {
+  color: #188038;
+}
+
+.google-badge-card h3 {
+  flex: 1;
+  color: var(--body-color);
+  font-size: 1rem;
+  line-height: 1.32;
+  margin-bottom: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.google-badge-meta {
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.google-badge-meta span {
+  display: inline-flex;
+  padding: 0.32rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(66, 133, 244, 0.1);
+  border: 1px solid rgba(66, 133, 244, 0.18);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.google-badge-link {
+  margin-top: auto;
+  color: #8ab4f8;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+[data-theme="light"] .google-badge-link {
+  color: #1a73e8;
+}
+
+.google-badge-link svg {
+  flex: 0 0 auto;
+  font-size: 0.68rem;
+}
+
+@media (max-width: 1080px) {
+  .google-badges-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .google-badges-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .google-badges-section {
+    padding: 4rem 1rem;
+  }
+
+  .google-badges-header h2 {
+    font-size: clamp(2rem, 9vw, 2.45rem);
+  }
+
+  .google-badges-summary {
+    align-items: flex-start;
+  }
+
+  .google-badges-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .google-badges-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .google-badges-hero,
+  .google-badge-card {
+    padding: 0.9rem;
+  }
+
+  .google-badges-summary {
+    flex-direction: column;
+  }
+
+  .google-badge-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

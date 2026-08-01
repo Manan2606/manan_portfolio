@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaSun, FaMoon, FaTerminal, FaUserAlt, FaCode, FaTools, FaEnvelope, FaBriefcase, FaCertificate, FaGraduationCap } from "react-icons/fa";
+import { FaSun, FaMoon, FaTerminal, FaUserAlt, FaCode, FaTools, FaEnvelope, FaBriefcase, FaCertificate, FaGraduationCap, FaGoogle } from "react-icons/fa";
 import "../css/Header.css";
 
 const SCROLL_OFFSET = 120; // Adjusted for floating dock offset
@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { id: "projects", icon: <FaCode />, label: "Projects" },
   { id: "education", icon: <FaGraduationCap />, label: "Education" },
   { id: "skills", icon: <FaTools />, label: "Skills" },
+  { id: "google-skill-badges", icon: <FaGoogle />, label: "Badges" },
   { id: "certifications", icon: <FaCertificate />, label: "Certs" },
   { id: "contact", icon: <FaEnvelope />, label: "Contact" },
 ];

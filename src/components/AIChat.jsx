@@ -5,7 +5,7 @@ import "../css/AIChat.css";
 const KNOWLEDGE_BASE = [
   {
     keywords: ["experience", "capgemini", "current", "work", "job", "dialogflow", "gecx"],
-    answer: "Manan is an Application Consultant / Software Engineer at Capgemini, working on Dialogflow CX and Google Cloud enhancements for an enterprise CCaaS platform. His work includes routing analysis, webhook/API debugging, Cloud Logging, BigQuery, Looker, and release validation."
+    answer: "Manan is an Associate Software Engineer at Capgemini, working on Dialogflow CX and Google Cloud enhancements for an enterprise CCaaS platform. His work includes routing analysis, webhook/API debugging, Cloud Logging, BigQuery, Looker, and release validation."
   },
   {
     keywords: ["project", "rag", "ai", "agent", "conversational", "cohere", "faiss", "queryshield", "text-to-sql", "sqlglot", "gemini", "bigquery"],
