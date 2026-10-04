@@ -10,10 +10,9 @@ import {
   FaDatabase,
   FaDocker,
   FaGitAlt,
+  FaGithub,
   FaHtml5,
-  FaJava,
   FaJs,
-  FaLeaf,
   FaNodeJs,
   FaPython,
   FaReact,
@@ -22,66 +21,73 @@ import {
   FaServer,
   FaTasks,
   FaTools,
-  FaVuejs,
   FaVial,
 } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
+import { SiMysql, SiSqlite } from "react-icons/si";
 import "../css/skills.css";
 
 const categories = [
   {
     title: "Languages",
-    summary: "The languages I use most for APIs, automation, data work, and full-stack delivery.",
+    summary:
+      "The languages I use most for APIs, automation, data work, and full-stack delivery.",
     accent: "#7c3aed",
     skills: [
       { name: "Python", icon: <FaPython /> },
       { name: "JavaScript", icon: <FaJs /> },
       { name: "TypeScript", icon: <FaCode /> },
       { name: "SQL", icon: <FaDatabase /> },
-      { name: "Java", icon: <FaJava /> },
+      { name: "C++", icon: <FaCode /> },
     ],
   },
   {
-    title: "Backend & APIs",
-    summary: "Backend services, API design, auth workflows, and maintainable server-side systems.",
+    title: "Backend & Databases",
+    summary:
+      "REST APIs, ORM-backed services, and the relational and analytical databases behind them.",
     accent: "#00ccff",
     skills: [
       { name: "FastAPI", icon: <FaServer /> },
       { name: "Node.js", icon: <FaNodeJs /> },
       { name: "REST APIs", icon: <FaCogs /> },
       { name: "SQLAlchemy", icon: <FaDatabase /> },
-      { name: "Spring Boot", icon: <FaLeaf /> },
+      { name: "PostgreSQL", icon: <FaDatabase /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "SQLite", icon: <SiSqlite /> },
+      { name: "BigQuery", icon: <FaChartBar /> },
     ],
   },
   {
     title: "Frontend",
-    summary: "Practical UI work for dashboards, portfolio experiences, and full-stack products.",
+    summary:
+      "Practical UI work for dashboards, portfolio experiences, and full-stack products.",
     accent: "#22c55e",
     skills: [
       { name: "React.js", icon: <FaReact /> },
       { name: "Next.js", icon: <FaCode /> },
-      { name: "Vue.js", icon: <FaVuejs /> },
       { name: "HTML5 / CSS3", icon: <FaHtml5 /> },
     ],
   },
   {
-    title: "Data & AI",
-    summary: "Applied AI systems, governed analytics, retrieval pipelines, and production data workflows.",
+    title: "AI & LLMs",
+    summary:
+      "Conversational agents, retrieval pipelines, governed Text-to-SQL, and LLM tooling.",
     accent: "#a855f7",
     skills: [
-      { name: "BigQuery", icon: <FaChartBar /> },
-      { name: "PostgreSQL", icon: <FaDatabase /> },
-      { name: "MySQL", icon: <SiMysql /> },
       { name: "RAG", icon: <FaRobot /> },
       { name: "FAISS", icon: <FaSearch /> },
       { name: "Gemini", icon: <FaBrain /> },
       { name: "Cohere", icon: <FaBrain /> },
+      { name: "Claude API", icon: <FaBrain /> },
+      { name: "Claude SDK", icon: <FaCode /> },
+      { name: "Claude Code", icon: <FaCode /> },
+      { name: "MCP", icon: <FaCogs /> },
       { name: "SQLGlot", icon: <FaVial /> },
     ],
   },
   {
     title: "Cloud & Delivery",
-    summary: "Certified cloud platforms, observability, containers, and release automation.",
+    summary:
+      "Certified cloud platforms, observability, containers, and release automation.",
     accent: "#f59e0b",
     skills: [
       { name: "GCP", icon: <FaCloud /> },
@@ -89,16 +95,18 @@ const categories = [
       { name: "Gemini Enterprise CX", icon: <FaRobot /> },
       { name: "Cloud Run", icon: <FaCloud /> },
       { name: "Cloud Logging", icon: <FaChartLine /> },
-      { name: "AWS", icon: <FaAws /> },
+      { name: "AWS (EC2, S3, RDS, Lambda)", icon: <FaAws /> },
       { name: "Docker", icon: <FaDocker /> },
       { name: "GitHub Actions", icon: <FaGitAlt /> },
     ],
   },
   {
     title: "Engineering Tools",
-    summary: "Team delivery, testing, API validation, documentation, and operational analysis.",
+    summary:
+      "Team delivery, testing, API validation, documentation, and operational analysis.",
     accent: "#ef4444",
     skills: [
+      { name: "GitHub", icon: <FaGithub /> },
       { name: "JIRA", icon: <FaTasks /> },
       { name: "Postman", icon: <FaTools /> },
       { name: "pytest", icon: <FaVial /> },
@@ -108,10 +116,15 @@ const categories = [
   },
 ];
 
+const totalSkills = categories.reduce(
+  (sum, category) => sum + category.skills.length,
+  0,
+);
+
 const featuredStats = [
-  { value: "6", label: "Focused Areas" },
-  { value: "35", label: "Core Skills" },
-  { value: "3", label: "Cloud Certifications" },
+  { value: String(categories.length), label: "Focused Areas" },
+  { value: String(totalSkills), label: "Core Skills" },
+  { value: "4", label: "Certifications" },
 ];
 
 const Skills = () => {
@@ -122,7 +135,8 @@ const Skills = () => {
           <span className="skills-eyebrow">Focused Stack</span>
           <h2 id="skills-heading">Tech Stack</h2>
           <p className="skills-subtitle">
-            A focused view of the tools I use most for backend APIs, cloud delivery, AI workflows, and full-stack product work.
+            A focused view of the tools I use most for conversational AI,
+            backend APIs, cloud delivery, and full-stack product work.
           </p>
         </div>
 
@@ -137,7 +151,11 @@ const Skills = () => {
 
         <div className="skills-grid">
           {categories.map((category) => (
-            <article className="skill-category-card" key={category.title} style={{ '--category-accent': category.accent }}>
+            <article
+              className="skill-category-card"
+              key={category.title}
+              style={{ "--category-accent": category.accent }}
+            >
               <div className="skill-card-header">
                 <div>
                   <h3>{category.title}</h3>

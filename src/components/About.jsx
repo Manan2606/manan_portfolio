@@ -1,11 +1,29 @@
 import "../css/About.css";
 import NewPhoto from "../Manan_Headshot.png";
-import { FaAws, FaDownload, FaGithub, FaGoogle, FaLinkedin, FaRobot, FaServer } from "react-icons/fa";
+import {
+  FaAws,
+  FaComments,
+  FaDownload,
+  FaGithub,
+  FaGoogle,
+  FaLinkedin,
+  FaRobot,
+  FaServer,
+} from "react-icons/fa";
 
 const About = () => {
-  const roleFit = ["Backend APIs", "Cloud delivery", "AI data systems"];
+  const roleFit = [
+    "Conversational AI agents",
+    "Backend APIs",
+    "Cloud delivery",
+  ];
 
   const proofItems = [
+    {
+      label: "Conversational AI",
+      detail: "Dialogflow CX on GCP",
+      icon: <FaComments />,
+    },
     { label: "3 Cloud Certs", detail: "AWS + GCP", icon: <FaGoogle /> },
     { label: "GCP + AWS", detail: "Cloud delivery", icon: <FaAws /> },
     { label: "Backend APIs", detail: "FastAPI + SQL", icon: <FaServer /> },
@@ -40,7 +58,10 @@ const About = () => {
             ))}
           </div>
 
-          <div className="executive-proof-row" aria-label="Profile proof points">
+          <div
+            className="executive-proof-row"
+            aria-label="Profile proof points"
+          >
             {proofItems.map((item) => (
               <div className="executive-proof-item" key={item.label}>
                 <span className="proof-icon">{item.icon}</span>
@@ -54,32 +75,71 @@ const About = () => {
 
           <div className="executive-text">
             <p className="executive-hook">
-              Software engineer focused on backend APIs, cloud delivery, and practical AI systems that move from prototype to production.
+              Software engineer who builds and ships conversational AI agents
+              end to end, backed by REST API development, cloud observability,
+              and governed AI data systems.
             </p>
             <p className="executive-description">
-              At Capgemini, I work on Dialogflow CX and Google Cloud enhancements for an enterprise CCaaS platform, debugging conversation flows, webhooks, cloud logs, and backend dependencies to improve routing accuracy and reduce call latency.
+              At Capgemini, I design and configure conversational AI agents for
+              an enterprise CCaaS platform on GCP, owning the work from
+              requirement gathering and stakeholder discussions through
+              conversation flow design, intent and entity configuration, and QA
+              validation before release.
             </p>
             <p className="executive-description">
-              My strongest stack centers on <strong>Python</strong>, <strong>FastAPI</strong>, <strong>React</strong>, <strong>PostgreSQL</strong>, <strong>BigQuery</strong>, <strong>Docker</strong>, <strong>AWS</strong>, <strong>GCP</strong>, and AI workflows using <strong>Gemini</strong>, <strong>FAISS</strong>, and <strong>Cohere</strong>.
+              Outside of work, I build independent projects like{" "}
+              <strong>QueryShield AI</strong>, a governed Text-to-SQL platform
+              with parser-based SQL validation and BigQuery cost checks, and a
+              multi-agent RAG system built on FAISS and Cohere.
+            </p>
+            <p className="executive-description">
+              My strongest stack centers on <strong>Python</strong>,{" "}
+              <strong>FastAPI</strong>, <strong>React</strong>,{" "}
+              <strong>TypeScript</strong>, <strong>PostgreSQL</strong>,{" "}
+              <strong>BigQuery</strong>, <strong>Docker</strong>,{" "}
+              <strong>GCP</strong>, <strong>AWS</strong>, and AI tooling
+              including <strong>Dialogflow CX</strong>, <strong>Gemini</strong>,{" "}
+              <strong>FAISS</strong>, <strong>Cohere</strong>, and the{" "}
+              <strong>Claude API</strong>.
             </p>
           </div>
 
           <div className="executive-actions" aria-label="Primary profile links">
-            <a className="executive-action primary" href="/Manan_Shah_Resume_07192026.pdf" download="Manan_Shah_Resume_07192026.pdf">
+            <a
+              className="executive-action primary"
+              href="/Manan_Shah_Resume_09242026.pdf"
+              download="Manan_Shah_Resume_09242026.pdf"
+            >
               <FaDownload /> Resume
             </a>
-            <a className="executive-action" href="https://github.com/Manan2606" target="_blank" rel="noopener noreferrer">
+            <a
+              className="executive-action"
+              href="https://github.com/Manan2606"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub /> GitHub
             </a>
-            <a className="executive-action" href="https://www.linkedin.com/in/manan-shah-b5376420b/" target="_blank" rel="noopener noreferrer">
+            <a
+              className="executive-action"
+              href="https://www.linkedin.com/in/manan-shah-b5376420b/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin /> LinkedIn
             </a>
           </div>
 
           <div className="executive-tags">
-            <span className="static-tag"><FaAws /> AWS Associate Level Certified</span>
-            <span className="static-tag"><FaGoogle /> Google Associate Cloud Engineer</span>
-            <span className="static-tag"><FaRobot /> AI Agentic Systems</span>
+            <span className="static-tag">
+              <FaAws /> AWS Associate Level Certified
+            </span>
+            <span className="static-tag">
+              <FaGoogle /> Google Associate Cloud Engineer
+            </span>
+            <span className="static-tag">
+              <FaRobot /> Claude Certified Developer
+            </span>
           </div>
         </div>
       </div>

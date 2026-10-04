@@ -28,19 +28,19 @@ const Experience = () => {
       duration: "Feb 2026 - Present",
       isCurrent: true,
       description: [
-        "Delivered Dialogflow CX enhancements and production defect fixes for an enterprise CCaaS platform, tracing parameter lifecycles across 10+ pages and routes.",
-        "Investigated call routing across Dialogflow CX, webhooks, API/database calls, and cloud logs; contributed optimizations that reduced average call latency by about 3 seconds per call.",
-        "Supported backend, observability, and release validation using Python, Cloud Run, Cloud Logging, BigQuery, Looker, Confluence, and Visio process maps.",
+        "Built and configured conversational AI agents for a client's Conversational AI platform, owning agent design end-to-end from requirement gathering and stakeholder discussions to conversation flow design and intent/entity configuration.",
+        "Served on the QA team validating conversational agent behavior across flows and edge cases, identifying defects and inconsistencies to ensure agents met functional and business requirements before release.",
+        "Translated ambiguous business requirements into clear, structured conversation designs and documented specifications, bridging the gap between stakeholder needs and technical implementation.",
       ],
       impact:
-        "Improved routing accuracy, reduced latency, and strengthened release validation for enterprise customer-care workflows.",
+        "Delivered production-ready conversational agents by pairing end-to-end design ownership with rigorous QA validation, so releases met business requirements.",
       technologies: [
         "Dialogflow CX",
-        "Python",
-        "Cloud Run",
-        "BigQuery",
-        "Cloud Logging",
-        "Looker",
+        "Gemini Enterprise for CX",
+        "GCP",
+        "Conversation Design",
+        "JIRA",
+        "Confluence",
       ],
     },
     {
